@@ -10,47 +10,47 @@
 
     <?php
 
-        // $q1 = $_REQUEST['q1'];
-        // $q2 = $_REQUEST['q2'];
-        // $q3 = $_REQUEST['q3'];
-        // $q4 = $_REQUEST['q4'];
-        // $q5 = $_REQUEST['q5'];
-        // $q6 = $_REQUEST['q6'];
-        // $q7 = $_REQUEST['q7'];
-        // $q8 = $_REQUEST['q8'];
-        // $q9 = $_REQUEST['q9'];
-        // $q10 = $_REQUEST['q10'];
+        // $q1 = $_POST['q1'];
+        // $q2 = $_POST['q2'];
+        // $q3 = $_POST['q3'];
+        // $q4 = $_POST['q4'];
+        // $q5 = $_POST['q5'];
+        // $q6 = $_POST['q6'];
+        // $q7 = $_POST['q7'];
+        // $q8 = $_POST['q8'];
+        // $q9 = $_POST['q9'];
+        // $q10 = $_POST['q10'];
 
         $total = 0;
 
-        if($_REQUEST['q1'] == "si"){
+        if($_POST['q1'] == "si"){
             $total += 3;
         }
-        if($_REQUEST['q2'] == "si"){
+        if($_POST['q2'] == "si"){
             $total += 3;
         }
-        if($_REQUEST['q3'] == "si"){
+        if($_POST['q3'] == "si"){
             $total += 3;
         }
-        if($_REQUEST['q4'] == "si"){
+        if($_POST['q4'] == "si"){
             $total += 3;
         }
-        if($_REQUEST['q5'] == "si"){
+        if($_POST['q5'] == "si"){
             $total += 3;
         }
-        if($_REQUEST['q6'] == "si"){
+        if($_POST['q6'] == "si"){
             $total += 3;
         }
-        if($_REQUEST['q7'] == "si"){
+        if($_POST['q7'] == "si"){
             $total += 3;
         }
-        if($_REQUEST['q8'] == "si"){
+        if($_POST['q8'] == "si"){
             $total += 3;
         }
-        if($_REQUEST['q9'] == "si"){
+        if($_POST['q9'] == "si"){
             $total += 3;
         }
-        if($_REQUEST['q10'] == "si"){
+        if($_POST['q10'] == "si"){
             $total += 3;
         }
 
