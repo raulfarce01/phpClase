@@ -7,6 +7,8 @@
     <title>Tabla de Multiplicar Resultado</title>
 </head>
 <body>
+
+    <table>
     
     <?php
 
@@ -14,11 +16,13 @@
 
         for($i = 1; $i < 11; $i++){
 
-            echo $num , ' * ' , $i , ' = ' , $num * $i , '<br>';
+            echo '<tr><td>' , $num , ' * ' , $i , '</td><td>' , $num * $i , '</td></tr>';
 
         }
 
     ?>
+
+    </table>
 
 </body>
 </html>
