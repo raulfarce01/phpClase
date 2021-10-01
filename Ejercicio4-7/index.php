@@ -19,9 +19,11 @@
             if($num == $deseado){
                 echo('Enhorabuena fiera, has encontrado el número, enga a dormir');
             }else{
-                echo('Has fallado payaso');
+                echo('Has fallado payaso<br><br>');
             }
-            echo('Te quedan ' , $oportunidades , 'oportunidades');
+            $oportunidades--;
+            echo("Te quedan $oportunidades oportunidades<br><br>");
+            //yo
         }else{
             echo ('Te has quedado sin oportunidades');
         }
