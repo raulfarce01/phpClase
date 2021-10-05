@@ -12,34 +12,39 @@
 
     $num = $_POST['num'];
     $deseado = $_POST['deseado'];
+    $oportunidades = $_POST['oportunidades'];
 
-    if(!isset($oportunidades)){
-        $oportunidades = 4;
-    }else{
-        if(isset($num)){
+        if(!isset($oportunidades)){
 
-            if($oportunidades > 0){
-
-                if($num == $deseado){
-
-                    echo 'Has acertado, a mimir crack';
-
-                }else{
-
-                    echo 'Has fallado payaso';
-                    $oportunidades--;
-                    echo 'Te quedan' , $oportunidades , ' oportunidades';
-
-                }
-
-            }else{
-
-                echo 'Te has quedado sin oportunidades';
-                
-            }
+            $oportunidades = 3;
 
         }
-    }
+        if(isset($num)){
+            
+                if($oportunidades > 0){
+
+                    if($num == $deseado){
+    
+                        echo 'Has acertado, a mimir crack<br><br>';
+    
+                    }else{
+    
+                        echo 'Has fallado payaso<br>';
+                        $oportunidades--;
+                        echo 'Te quedan ' , $oportunidades , ' oportunidades<br><br>';
+    
+                    }
+    
+                }else{
+    
+                    echo 'Te has quedado sin oportunidades<br><br>';
+    
+                }
+            }else{
+
+            echo 'No has introducido un número<br><br>';
+
+        }
 
     /*$num = $_POST['num'];
     $deseado = $_POST['deseado'];
@@ -72,6 +77,7 @@
     
         Número: <input type="number" name="num"><br><br>
         <input type="hidden" name="deseado" value="5810">
+        <input type="hidden" name="oportunidades" value="<?php echo $oportunidades ?>">
 
         <input type="submit" value="Enviar">
 
