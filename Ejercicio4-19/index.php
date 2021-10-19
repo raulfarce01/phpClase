@@ -18,7 +18,7 @@
                 for($j = 0; $j < $i; $j++){
 
                     if($j == $i/2){
-                        echo '/';
+                        echo '/ <br>';
                     }else{
                         echo '&nbsp;';
                     }
