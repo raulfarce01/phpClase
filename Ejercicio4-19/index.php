@@ -11,30 +11,36 @@
     <?php 
     
         $hide = $_POST['hide'];
-    
-        if($_POST['mat'] == "/"){
+        $ancho = 0;
 
-            for($i = 0; $i < $hide; $i++){
-                for($j = 0; $j < $i; $j++){
 
-                    if($j == $i/2){
-                        echo '/ <br>';
+            for($i = $hide; $i > 0; $i--){
+                for($j = 0; $j < $i + $ancho; $j++){
+                    if($j < $i - 1){
+                        echo '&nbsp;&nbsp;';
                     }else{
-                        echo '&nbsp;';
+                        if($_POST['mat'] == "*"){
+
+                            echo '*';
+
+                        }else if($_POST['mat'] == "/"){
+
+                            echo '/';
+                
+                        }else if($_POST['mat'] == "+"){
+                
+                            echo '+';
+
+                        }else if($_POST['mat'] == "."){
+
+                            echo '.';
+
+                        }
                     }
-
                 }
+                $ancho+=2;
+                echo '<br>';
             }
-
-        }else if($_POST['mat'] == "/"){
-
-        }else if($_POST['mat'] == "/"){
-
-        }else if($_POST['mat'] == "/"){
-
-        }else{
-            echo 'Error, material introducido no válido';
-        }
     ?>
 
     <form action="#" method="post">
@@ -47,7 +53,7 @@
         <input type="radio" name="mat" value="*">&nbsp;*<br>
         <input type="radio" name="mat" value="-">&nbsp;-<br><br>
 
-        Altura de la pirámide: <input type="number" name="hide"><br>
+        Altura de la pirámide: <input type="number" name="hide" autofocus="autofocus"><br>
         <input type="submit" value="Enviar">
 
     </form>
