@@ -10,7 +10,9 @@
     
     <?php 
     
+        //Esto lo he puesto porque los warnings me daban TOC, es lo que hay :v
         error_reporting(0);
+
         //Recogida de datos del formulario
         $lunes = $_POST['lunes'];
         $martes = $_POST['martes'];
