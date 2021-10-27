@@ -9,6 +9,8 @@
 <body>
     
     <?php 
+
+        //MEDIO PIXEL DE PUNTO PARA EL EXAMEN AUNQUE SEA ;(
     
         //Esto lo he puesto porque los warnings me daban TOC, es lo que hay :v
         error_reporting(0);
