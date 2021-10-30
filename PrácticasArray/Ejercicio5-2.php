@@ -13,36 +13,44 @@
         $num = $_POST['num'];
         $countNum = $_POST['countNum'];
         $auxNum = $_POST['auxNum'];
-        $max = 0;
-        $min = 0;
+        
 
         if(!isset($num)){
 
             echo 'Introduce números';
             $countNum = 0;
             $auxNum = "";
+            $max = 0;
+            $min = 0;
 
         }
 
         if($countNum == 9){
 
-            //$auxNum = $auxNum , ' ' , $num;
-            $auxNum = $substr($auxNum, 2);
+            //$auxNum = $auxNum , " " , $num;
 
             $num = explode(" ", $auxNum);
             foreach ($num as $valor){
-                if($valormax > $max){
 
-                    "max" => $valor;
+                if($valor < $min){
+
+                    $min = $valor;
 
                 }else{
 
-                    "min" => $valor;
+                    $max = $valor;
 
                 }
             }
 
-            echo $auxNum;
+            $auxNum["Máximo"] = $max;
+            $auxNum["Mínimo"] = $min;
+
+            foreach ($auxNum as $valor){
+
+                echo $valor , '<br>';
+
+            }
 
         }
         
