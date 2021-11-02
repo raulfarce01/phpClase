@@ -21,48 +21,58 @@
             $countNum = 0;
             $auxNum = "";
             $max = 0;
-            $min = 0;
+            $min = 19000021039213934012;
 
-        }
+        }else{
+            if($countNum == 10){
 
-        if($countNum == 10){
+                //echo 'if countnum == 10';
+    
+                $auxNum = $auxNum . "," . $num;
+                $auxNum = substr($auxNum, 2);
+                $num = explode(",", $auxNum);
 
-            $auxNum = $auxNum . " " . $num;
-            $auxNum = substr($auxNum, 2);
-            $num = explode(" ", $auxNum);
-
-            foreach ($num as $valor){
-
-                if($valor < $min){
-
-                    $min = $valor;
-
-                }else if ($valor > $max){
-
-                    $max = $valor;
-
-                }
-            }
-
-            foreach ($auxNum as $valor){
-
-                if($valor == $min){
-
-                    echo 'Mínimo =>' . $valor . '<br>';
-
-                }else if($valor == $max){
-
-                    echo 'Máximo =>' . $valor . '<br>';
-
-                }else{
+                /*foreach($num as $valor){
 
                     echo $valor . '<br>';
 
+                }*/
+    
+                foreach ($num as $valor){
+    
+                    if($valor < $min){
+    
+                        $min = $valor;
+    
+                    }else if ($valor > $max){
+    
+                        $max = $valor;
+    
+                    }
                 }
-
+    
+                foreach ($num as $valor){
+    
+                    if($valor == $min){
+    
+                        echo 'Mínimo => ' . $valor . '<br>';
+    
+                    }else if($valor == $max){
+    
+                        echo 'Máximo => ' . $valor . '<br>';
+    
+                    }else{
+    
+                        echo $valor . '<br>';
+    
+                    }
+    
+                }
+    
             }
-
         }
+
+        
         
     if (($countNum < 10) || (!isset($num))){
     ?>
@@ -71,13 +81,15 @@
 
         <label for="num">Número:</label>
         <input type="number" name="num" autofocus><br>
-        <input type="hidden" name="countNum" value="<?php ++$countNum ?>">
-        <input type="hidden" name="auxNum" value="<?php $auxNum . " " . $num ?>">
+        <input type="hidden" name="countNum" value="<?php echo ++$countNum ?>">
+        <input type="hidden" name="auxNum" value="<?php echo $auxNum . "," . $num ?>">
 
         <input type="submit" value="Enviar">
 
     </form>
     <?php
+
+        echo $auxNum;
 
     }
 
