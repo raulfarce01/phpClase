@@ -26,6 +26,8 @@
         }else{
             if($countNum == 15){
 
+                //commit
+
                 $auxNum .= "," . $num;
                 $auxNum = substr($auxNum, 2);
                 $num = explode(",", $auxNum);
