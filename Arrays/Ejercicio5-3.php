@@ -20,8 +20,7 @@
             echo 'Introduce números';
             $countNum = 0;
             $auxNum = "";
-            $max = 0;
-            $min = 19000021;
+            $nuevoNum = new SplFixedArray(15);
 
         }else{
             if($countNum == 15){
