@@ -40,7 +40,7 @@
     
                 foreach ($num as $valor){
     
-                    if($valor < $min){
+                    if ($valor < $min){
     
                         $min = $valor;
     
@@ -66,9 +66,9 @@
                         echo $valor . '<br>';
     
                     }
-    
+
                 }
-    
+
             }
         }
 
@@ -89,7 +89,7 @@
     </form>
     <?php
 
-        echo $auxNum;
+        //echo $auxNum;
 
     }
 
