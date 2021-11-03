@@ -24,6 +24,7 @@
             $pos = 0;
 
         }else{
+            
             if($countNum == 15){
 
                 //commit
@@ -70,8 +71,8 @@
 
         <label for="num">Número:</label>
         <input type="number" name="num" autofocus><br>
-        <input type="hidden" name="countNum" value="<?php echo ++$countNum ?>">
-        <input type="hidden" name="auxNum" value="<?php echo $auxNum . "," . $num ?>">
+        <input type="hidden" name="countNum" value="<?php echo ++$countNum; ?>">
+        <input type="hidden" name="auxNum" value="<?php echo $auxNum . "," . $num; ?>">
 
         <input type="submit" value="Enviar">
 

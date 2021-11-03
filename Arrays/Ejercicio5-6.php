@@ -20,6 +20,7 @@
             $auxNum = "";
 
         }else{
+
             if($countNum == 8){
 
                 $auxNum = $auxNum . "," . $num;
@@ -30,36 +31,35 @@
 
                     if($valor%2 == 0){
 
-                        echo '<span style=\"color: red;\">' . $valor . "</span>";
+                        echo '<span style="color: red;">' . $valor . "</span><br>";
 
                     }else{
 
-                        echo '<span style=\"color: blue;\">' . $valor . "</span>";
+                        echo '<span style="color: blue;">' . $valor . "</span><br>";
 
                     }
-
+                }
             }
-
-            }
-
         }
 
         if((!isset($num)) || ($countNum < 8)){
     
     ?>
 
-    <form action="#" method="push">
+    <form action="#" method="post">
+
+        <span style="color: red;">827349</span>
 
         Número: <input type="number" name="num" autofocus><br>
         <input type="hidden" name="auxNum" value="<?php echo $auxNum , "," , $num; ?>">
-        <input type="hidden" name="countNum" value="<?php echo $countNum; ?>">
+        <input type="hidden" name="countNum" value="<?php echo ++$countNum; ?>">
         <input type="submit" value="Enviar">
 
     </form>
 
     <?php
 
-            echo $countNum++;
+            //echo $countNum;
 
         }
 
