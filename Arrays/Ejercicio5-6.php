@@ -48,8 +48,6 @@
 
     <form action="#" method="post">
 
-        <span style="color: red;">827349</span>
-
         Número: <input type="number" name="num" autofocus><br>
         <input type="hidden" name="auxNum" value="<?php echo $auxNum , "," , $num; ?>">
         <input type="hidden" name="countNum" value="<?php echo ++$countNum; ?>">

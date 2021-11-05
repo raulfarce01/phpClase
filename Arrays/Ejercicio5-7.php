@@ -10,50 +10,75 @@
     
     <?php
 
-        $num = new SplFixedArray(20);
-        $auxNum = new SplFixedArray(20);
+        
+        $pares = 0;
+        $impares = 0;
 
-        foreach($num as $valor){
+        if(!isset($auxNum)){
 
-            $valor = rand(0, 100);
+            for($i = 0; $i < 20; $i++){
 
-            echo $valor . ", ";
+                $num[$i] = rand(0, 100);
+                echo $num[$i] . " ";
 
-        }
+            }
 
-        echo '<br>';
+            $auxNum = implode(",", $num);
 
-        for($i = 0; $i < count($num); $i++){
+        }else{
 
-            for($j = count($num); $j > 0; $j--){
+            $num = explode(",", $auxNum);
+
+            /*for($i = 0; $i < count($num); $i++){
 
                 if($num[$i]%2 == 0){
-
-                    $auxNum[$i] = $num[$i];
-    
-                    //echo 'Entraif1 ';
-    
+                    $pares++;
+                }else{
+                    $impares++;
                 }
+     
+             }*/
 
-                if($num[$i]%2 != 0){
+            $cuenta = 0;
+            $cuentaAtras = 20;
+     
+             for($i = 0; $i < 20; $i++){
+     
+                if($num[$i]%2 == 0){
+                    
+                    $numPares[$cuenta] = $num[$i];
 
-                    $auxNum[$j] = $num[$i];
+                    $cuenta++;
 
-                    //echo 'Entra if2 ';
+                }else{
+
+                    $numImpares[$cuentaAtras] = $num[$i];
+
+                    $cuentaAtras--;
 
                 }
+            }
+
+            foreach($numPares as $valor){
+
+                echo $valor . ' ';
+
+            }
+
+            foreach($numImpares as $valor){
+
+                echo $valor . ' ';
 
             }
 
         }
-
-        foreach($auxNum as $valor){
-
-            echo $valor . ", ";
-
-        }
-
     ?>
+
+    <form action="#" method="post">
+
+        <input type="submit" value="Enviar">
+
+    </form>
 
 </body>
 </html>
