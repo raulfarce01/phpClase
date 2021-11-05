@@ -13,6 +13,7 @@
         $num = $_POST['num'];
         $countNum = $_POST['countNum'];
         $auxNum = $_POST['auxNum'];
+        $min = $_POST['min'];
         
 
         if(!isset($num)){
@@ -21,7 +22,7 @@
             $countNum = 0;
             $auxNum = "";
             $max = 0;
-            $min = 19000021039213934012;
+            $min = 190000210;
 
         }else{
             if($countNum == 10){
@@ -39,8 +40,12 @@
                 }*/
     
                 foreach ($num as $valor){
+
+                    //echo $valor . '=>' . $min . ";";
     
                     if ($valor < $min){
+
+                        //echo 'entra';
     
                         $min = $valor;
     
@@ -52,7 +57,9 @@
                 }
     
                 foreach ($num as $valor){
-    
+
+                    //echo $min . ' ';
+                    
                     if($valor == $min){
     
                         echo 'Mínimo => ' . $valor . '<br>';
@@ -81,15 +88,16 @@
 
         <label for="num">Número:</label>
         <input type="number" name="num" autofocus><br>
-        <input type="hidden" name="countNum" value="<?php echo ++$countNum ?>">
-        <input type="hidden" name="auxNum" value="<?php echo $auxNum . "," . $num ?>">
+        <input type="hidden" name="countNum" value="<?php echo ++$countNum; ?>">
+        <input type="hidden" name="auxNum" value="<?php echo $auxNum . "," . $num; ?>">
+        <input type="hidden" name="min" value="<?php echo $min; ?>">
 
         <input type="submit" value="Enviar">
 
     </form>
     <?php
 
-        //echo $auxNum;
+        //echo $min;
 
     }
 

@@ -14,7 +14,7 @@
         $pares = 0;
         $impares = 0;
 
-        if(!isset($auxNum)){
+        if(!isset($_POST['auxNum'])){
 
             for($i = 0; $i < 20; $i++){
 
@@ -26,21 +26,12 @@
             $auxNum = implode(",", $num);
 
         }else{
+            $auxNum = $_POST['auxnum'];
 
             $num = explode(",", $auxNum);
 
-            /*for($i = 0; $i < count($num); $i++){
-
-                if($num[$i]%2 == 0){
-                    $pares++;
-                }else{
-                    $impares++;
-                }
-     
-             }*/
-
             $cuenta = 0;
-            $cuentaAtras = 20;
+            $cuentaImpar = 0;
      
              for($i = 0; $i < 20; $i++){
      
@@ -52,9 +43,9 @@
 
                 }else{
 
-                    $numImpares[$cuentaAtras] = $num[$i];
+                    $numImpares[$cuentaImpar] = $num[$i];
 
-                    $cuentaAtras--;
+                    $cuentaImpar++;
 
                 }
             }
@@ -76,6 +67,7 @@
 
     <form action="#" method="post">
 
+        <input type="hidden" name="auxNum" value="<?php echo $auxNum; ?>">
         <input type="submit" value="Enviar">
 
     </form>
