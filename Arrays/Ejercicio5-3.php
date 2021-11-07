@@ -20,8 +20,8 @@
             echo 'Introduce números';
             $countNum = 0;
             $auxNum = "";
+            //Este es el array que ordenaremos
             $nuevoNum = new SplFixedArray(15);
-            $pos = 0;
 
         }else{
             
@@ -29,36 +29,36 @@
 
                 //commit
 
+                //
+                //Estas 3 líneas de código servirán para poder almacenar el array correctamente
+                //
                 $auxNum .= "," . $num;
                 $auxNum = substr($auxNum, 2);
                 $num = explode(",", $auxNum);
 
+                //
+                //Primero hacemos lo más sencillo, dar al primer valor del array auxiliar
+                //el último del original
+                //
                 $nuevoNum[0] = $num[14];
         
+                //
+                //En este for almacenamos el valor del campo (por ejemplo) 1 del array original
+                //al campo 2 del array auxiliar
+                //
                 for($i = 0; $i < count($num) - 1; $i++){
 
                     $nuevoNum[$i+1] = $num[$i];
 
-                    //$pos++;
 
                 }
-        
-                //echo "num0: " , $nuevoNum[0] , "<br> num14: " , $num[14] , "<br>";
-                //$nuevoNum[0] = $num[14];
-        
+
+                //Mostramos el array final
                 foreach($nuevoNum as $valor){
         
                     echo $valor . '<br>';
         
                 }
-
-                /*echo 'Array 2 <br>';
-
-                foreach($num as $valor){
-        
-                    echo $valor . '<br>';
-        
-                }*/
             }
         }
 

@@ -23,10 +23,14 @@
 
             if($countNum == 8){
 
+                //
+                //Creamos el array con los valores introducidos por el usuario
+                //
                 $auxNum = $auxNum . "," . $num;
                 $auxNum = substr($auxNum, 2);
                 $num = explode(",", $auxNum);
 
+                //Comprobamos que sean pares o impares, los pares los pintamos de rojo y los impares de azul
                 foreach($num as $valor){
 
                     if($valor%2 == 0){
