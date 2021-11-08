@@ -1,60 +1,56 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .title {
-    padding-top: 0.6em;
-    text-align: center;
-    background-color: #E5BEE8;
-    height: 10vh;
+  padding-top: 0.6em;
+  text-align: center;
+  background-color: #e5bee8;
+  height: 10vh;
 }
 
 nav {
-    background-color: #E5BEE8;
-    float: left;
-    height: 90vh;
-    width: 10%;
-    text-align: center;
-    line-height: 30pt;
+  background-color: #e5bee8;
+  float: left;
+  height: 90vh;
+  width: 10%;
+  text-align: center;
+  line-height: 30pt;
 }
 
 main {
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 20px;
-    background-color: E0FECF;
-    float: right;
-    height: 90vh;
-    width: 90%;
-    line-height: 15pt;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+  background-color: E0FECF;
+  float: right;
+  height: 90vh;
+  width: 90%;
+  line-height: 15pt;
 }
 
 a {
-    color: black;
+  color: black;
 }
 
 a:hover {
-    color: darkblue;
+  color: darkblue;
 }
 
 a:visited {
-    color: darkmagenta;
+  color: darkmagenta;
 }
 
 a:visited:hover {
-    color: darkblue;
+  color: darkblue;
 }
 
 .parrafo {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #titleP {
-    padding: 5pt;
+  padding: 5pt;
 }
