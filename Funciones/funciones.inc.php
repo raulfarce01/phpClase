@@ -5,6 +5,8 @@ en caso contrario.*/
 
 function esCapicua($num){
 
+    $capicuo = true;
+
     if($num >= 0 && $num < 10){
 
         return true;
@@ -63,7 +65,7 @@ function esCapicua($num){
             $num1 = (int)($num/1000);
             $num2 = $num%100;
 
-            echo $num1%10 , ', ' , (int)($num2/10);
+            //echo $num1%10 , ', ' , (int)($num2/10);
 
             if($num1%10 != (int)($num2/10)){
 
@@ -102,37 +104,78 @@ parámetro.*/
 function siguientePrimo($num){
 
     $esPrimo = true;
-    $num++;
 
-    for($i = 2; $i < $num; $i++){
+    do{
 
-        if($num%$i == 0){
+        $num++;
+        $esPrimo = true;
 
-            $num++;
-            
+        for($i = 2; $i <= $num/2; $i++){
+
+            if($num%$i == 0){
+                $esPrimo = false;
+            }
+
         }
 
-    }
+        
 
-    return $esPrimo;
+    }while(!$esPrimo);
+
+    return $num;
 
 }
 
 /*4. potencia: Dada una base y un exponente devuelve la potencia.*/
 
-function potencia(){
+function potencia($base, $exp){
 
+    $total = 1;
+
+    for($i = 0; $i < $exp; $i++){
+
+        $total *= $base;
+
+    }
+
+    return $total;
 }
 
 /*5. digitos: Cuenta el número de dígitos de un número entero.*/
 
-function digitos(){
+function digitos($num){
+
+    $digitos = 1;
+    //echo $num;
+
+    while($num >= 10){
+
+        $num /= 10;
+        $digitos++;
+
+    }
+
+    return $digitos;
 
 }
 
 /*6. voltea: Le da la vuelta a un número.*/
 
-function voltea(){
+function voltea($num){
+
+    $numFinal = "";
+    $acum = 10;
+
+    while($num >= 1){
+
+        $numFinal .= $num%$acum;
+        $num = (int)($num/10);
+
+        //echo $num . ' ' . $acum . ' ' . $numFinal . '<br>';
+
+    }
+
+    return (int)$numFinal;
 
 }
 
