@@ -10,9 +10,18 @@
     
     <?php
 
-        echo 'Hola Mundo';
+        include_once 'funcionFecha.inc.php';
 
-    ?>
+        echo '<table>';
 
+        foreach($_SERVER as $valor1 => $valor2){
+
+            echo '<tr><td>' . $valor1 . '</td><td>' . $valor2 . '</td></tr>';
+
+        }
+
+        echo '</table>';
+
+        ?>
 </body>
 </html>

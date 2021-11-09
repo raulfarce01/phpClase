@@ -182,7 +182,32 @@ function voltea($num){
 /*7. digitoN: Devuelve el dígito que está en la posición n de un número entero. Se empieza
 contando por el 0 y de izquierda a derecha.*/
 
-function digitoN(){
+function digitoN($num, $ocur){
+
+    $cuenta = 1;
+    $encuentra = 0;
+
+    while($num >= 10){
+
+        $num /= 10;
+        $cuenta++;
+
+    }
+
+    while($cuenta >= 1){
+
+        if((int)$num%10 == $ocur){
+
+            $encuentra = $cuenta;
+
+        }
+
+        $num *= 10;
+        $cuenta--;
+
+    }
+
+    return ++$encuentra;
 
 }
 
@@ -190,6 +215,35 @@ function digitoN(){
 entero. Si no se encuentra, devuelve -1.*/
 
 function posicionDeDigito(){
+
+    $cuenta = 1;
+    $encuentra = 0;
+
+    while($num >= 10){
+
+        $num /= 10;
+        $cuenta++;
+
+    }
+
+    while($cuenta >= 1){
+
+        if((int)$num%10 == $ocur){
+
+            $encuentra = $cuenta;
+
+        }
+
+        $num *= 10;
+        $cuenta--;
+
+    }
+
+    if($encuentra == 0){
+        $encuentra = -2;
+    }
+
+    return ++$encuentra;
 
 }
 

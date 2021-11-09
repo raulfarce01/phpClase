@@ -14,7 +14,7 @@
 
         include_once 'funciones.inc.php';
 
-        echo voltea($num);
+        echo digitoN($num, 8);
     
     ?>
 
