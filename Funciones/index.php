@@ -10,11 +10,11 @@
     
     <?php 
     
-        $num = 6543;
+        $num = 123456789;
 
         include_once 'funciones.inc.php';
 
-        echo digitoN($num, 8);
+        echo juntaNumeros($num, 464);
     
     ?>
 

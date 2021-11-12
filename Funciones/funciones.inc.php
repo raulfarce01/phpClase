@@ -249,38 +249,78 @@ function posicionDeDigito(){
 
 /*9. quitaPorDetras: Le quita a un número n dígitos por detrás (por la derecha).*/
 
-function quitaPorDelante(){
+function quitaPorDetras($num, $corta){
+
+    for($i = 0; $i < $corta; $i++){
+
+        $num = $num/10;
+
+    }
+
+    return (int)$num;
 
 }
 
 /*10. quitaPorDelante: Le quita a un número n dígitos por delante (por la izquierda).*/
 
-function quitaPorDetras(){
+function quitaPorDelante($num, $corta){
+
+    $cifras = 0;
+    $aux = $num;
+
+    for($i = 1; $i < $aux; $i*=10){
+
+        $aux /= 10;
+        $cifras++;
+
+    }
+
+    $ifras -= $corta;
+
+    return (int)($num%(pow(10, $cifras)));
 
 }
 
 /*11. pegaPorDetras: Añade un dígito a un número por detrás.*/
 
-function pegaPorDetras(){
+function pegaPorDetras($num, $pega){
+
+    $num .= $pega;
+
+    return (int)$num;
 
 }
 
 /*12. pegaPorDelante: Añade un dígito a un número por delante.*/
 
-function pegaPorDelante(){
+function pegaPorDelante($num, $pega){
+
+    $pega .= $num;
+
+    return (int)$pega;
 
 }
 
 /*13. trozoDeNumero: Toma como parámetros las posiciones inicial y final dentro de un número
 y devuelve el trozo correspondiente.*/
 
-function trozoDeNumero(){
+function trozoDeNumero($num, $ini, $fin){
+
+    $num = (string)$num;
+
+    $num = substr($num, $ini, ($fin-$ini));
+
+    return (int)$num;
 
 }
 
 /*14. juntaNumeros: Pega dos números para formar uno.*/
 
-function juntaNumeros(){
+function juntaNumeros($num, $pega){
+
+    $num .= $pega;
+
+    return (int)$num;
 
 }
 
