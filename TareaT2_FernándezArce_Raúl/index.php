@@ -12,6 +12,8 @@
 
         if(isset($_POST['enviar'])){
 
+            $contacto = $_POST['contacto'];
+
             if(isset($_POST['nombre']) && isset($_POST['tlf'])){
 
                 $nombre = $_POST['nombre'];
@@ -28,7 +30,22 @@
                 compruebaDatosBorra($nombre);
 
             }
+
+            //print_r($contacto);
+
+            //Generar tabla
+            echo '<table>';
+
+                foreach($contacto as $clave => $valor){
+
+                    echo '<tr><td>' . $valor . '</td></td>' . $clave . '</tr>';
+
+                }
+
+            echo '</table>';
         }
+
+        echo 'No hay usuarios registrados';
 
     ?>
     
@@ -39,13 +56,13 @@
 
             <p>
                 <td><label for="nombre">Nombre: </label></td>
-                <td><input type="text" name="nombre" value="<?php echo $nombre; ?>"></td>
+                <td><input type="text" name="nombre" value="<?php echo $nombre; ?>" autofocus></td>
             </p>
 
             <?php
 
                 if(isset($_POST['enviar']) && empty($_POST['nombre'])){
-                    echo '<span style="color: red;"> Debes introducir un nombre </span>';
+                    echo '<td><span style="color: red;"> Debes introducir un nombre </span></td>';
                 }
 
             ?>
@@ -58,12 +75,13 @@
             </p>
         </tr>
 
+        <input type="hidden" name="contacto" value="<?php echo $contacto; ?>">
+
         <tr>
             <p>
                 <td><input type="submit" value="Enviar" name="enviar"></td>
             </p>
         </tr>
-        <input type="hidden" name="contacto[]">
 
     </form>
 
@@ -71,7 +89,66 @@
 
         function compruebaDatos($nombre, $tlf){
 
-            
+            foreach($contacto as $clave => $valor){
+
+                if($valor == $nombre && $tlf != $clave){
+
+                    actualizaContacto($nombre, $tlf);
+
+                }
+
+                if(!in_array($nombre, $contacto)){
+
+                    añadeContacto($nombre, $tlf);
+
+                }
+
+            }
+
+
+        }
+
+        function compruebaDatosBorra($nombre){
+
+            if(in_array($nombre, $contacto)){
+
+                borraContacto($nombre);
+
+            }
+
+        }
+
+        function borraContacto($nombre){
+
+            foreach($contacto as $clave => $valor){
+
+                if($nombre == $valor){
+
+                    unset($contacto[$clave]);
+
+                }
+
+            }
+
+        }
+
+        function actualizaContacto($nombre, $tlf){
+
+            foreach($contacto as $clave => $valor){
+
+                if($nombre == $valor){
+
+                    $clave = $tlf;
+
+                }
+
+            }
+
+        }
+
+        function añadeContacto($nombre, $tlf){
+
+            $contacto[$tlf] = $nombre;
 
         }
 
