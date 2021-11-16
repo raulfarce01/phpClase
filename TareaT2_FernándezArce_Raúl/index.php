@@ -10,9 +10,20 @@
 
     <?php
 
+        $coincidenciaNom = 0;
+        $coincidenciaTlf = 0;
+
         if(isset($_POST['enviar'])){
 
             $contacto = $_POST['contacto'];
+
+            foreach($contacto as $clave => $valor){
+
+                echo $clave . ', ' . $valor;
+
+            }
+
+            echo var_dump($contacto[0]);
 
             if(isset($_POST['nombre']) && isset($_POST['tlf'])){
 
@@ -34,19 +45,20 @@
             //print_r($contacto);
 
             //Generar tabla
-            echo '<table>';
+            echo '<table border=1pt><tr><td>Nombre</td><td>Teléfono</td></tr>';
 
                 foreach($contacto as $clave => $valor){
 
-                    echo '<tr><td>' . $valor . '</td></td>' . $clave . '</tr>';
+                    echo '<tr><td>' . $valor . '</td><td>' . $clave . '</td></tr>';
 
                 }
 
             echo '</table>';
+        }else{
+
+            echo 'No hay usuarios registrados';
+
         }
-
-        echo 'No hay usuarios registrados';
-
     ?>
     
     <form action="#" method="post">
@@ -71,11 +83,11 @@
         <tr>
             <p>
                 <td><label for="tlf">Teléfono: </label></td>
-                <td><input type="number" name="tlf" value="<?php echo $tlf; ?>"></td>
+                <td><input type="text" name="tlf" value="<?php echo $tlf; ?>"></td>
             </p>
         </tr>
 
-        <input type="hidden" name="contacto" value="<?php echo $contacto; ?>">
+        <input type="hidden" name="contacto[<?php $_POST['tlf']?>]" value="<?php echo $contacto; ?>">
 
         <tr>
             <p>
@@ -89,30 +101,64 @@
 
         function compruebaDatos($nombre, $tlf){
 
+            echo 'CompruebaDatos <br>';
+
             foreach($contacto as $clave => $valor){
 
-                if($valor == $nombre && $tlf != $clave){
+                echo 'Valor: ' . $valor . ', Nombre: ' . $nombre . '<br>';
 
-                    actualizaContacto($nombre, $tlf);
+                if($valor == $nombre){
+
+                    $coincidencia++;
 
                 }
 
-                if(!in_array($nombre, $contacto)){
+                if($clave == $tlf){
 
-                    añadeContacto($nombre, $tlf);
+                    $coincidencia++;
 
                 }
 
             }
 
+            if($coincidenciaNom == 0 && $coincidenciaTlf == 0){
+
+                añadeContacto($nombre, $tlf);
+
+            }
+
+            if($coincidenciaNom == 1 && $coincidenciaTlf == 0){
+
+                actualizaContacto($nombre, $tlf);
+
+            }
+
+            $coincidenciaNom = 0;
+            $coincidenciaTlf = 0;
 
         }
 
         function compruebaDatosBorra($nombre){
 
-            if(in_array($nombre, $contacto)){
+            echo 'compruebaDatosBorra <br>';
+
+            foreach($contacto as $clave => $valor){
+
+                if ($valor == $nombre){
+
+                    $coincidenciaNom++;
+
+                }
+
+            }
+
+            if($coincidenciaNom == 1){
 
                 borraContacto($nombre);
+
+            }else{
+
+                echo 'No existen nadie con ese nombre para borrar en la agenda <br>';
 
             }
 
@@ -120,11 +166,15 @@
 
         function borraContacto($nombre){
 
+            echo 'borraContacto';
+
             foreach($contacto as $clave => $valor){
 
                 if($nombre == $valor){
 
                     unset($contacto[$clave]);
+
+                    echo 'borraContacto entra if <br>';
 
                 }
 
@@ -134,9 +184,13 @@
 
         function actualizaContacto($nombre, $tlf){
 
+            echo 'actualizaContacto <br>';
+
             foreach($contacto as $clave => $valor){
 
                 if($nombre == $valor){
+
+                    echo 'if actualizaContacto <br>';
 
                     $clave = $tlf;
 
@@ -149,6 +203,10 @@
         function añadeContacto($nombre, $tlf){
 
             $contacto[$tlf] = $nombre;
+
+            echo var_dump($contacto);
+
+            echo 'Función AñadeContacto <br>';
 
         }
 
