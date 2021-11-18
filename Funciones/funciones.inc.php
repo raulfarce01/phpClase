@@ -327,44 +327,141 @@ function juntaNumeros($num, $pega){
 /*1. generaArrayInt: Genera un array de tamaño n con números aleatorios cuyo intervalo
 (mínimo y máximo) se indica como parámetro.*/
 
-function generaArrayInt(){
+function generaArrayInt($size, $min, $max){
+
+    $array = [];
+
+    for($i = 0; $i < $size; $i++){
+
+        $array[$i] = rand($min, $max);
+
+    }
+
+    return $array;
 
 }
 
 /*2. minimoArrayInt: Devuelve el mínimo del array que se pasa como parámetro.*/
 
-function minimoArrayInt(){
+function minimoArrayInt($array){
+
+    $min = PHP_INT_MAX;
+
+    foreach($array as $valor){
+
+        if($valor < $min){
+
+            $min = $valor;
+
+        }
+
+    }
+
+    return $min;
 
 }
 
 /*3. maximoArrayInt: Devuelve el máximo del array que se pasa como parámetro.*/
 
-function maximoArrayInt(){
+function maximoArrayInt($array){
+
+    $max = PHP_INT_MIN;
+
+    foreach($array as $valor){
+
+        if($valor > $max){
+
+            $max = $valor;
+
+        }
+
+    }
+
+    return $max;
 
 }
 
 /*4. mediaArrayInt: Devuelve la media del array que se pasa como parámetro.*/
 
-function mediaArrayInt(){
+function mediaArrayInt($array){
+
+    $media = 0;
+    $cuenta = 0;
+
+    foreach($array as $valor){
+
+        $media += $valor;
+        $cuenta++;
+
+    }
+
+    $media/=$cuenta;
+
+    return $media;
 
 }
 
 /*5. estaEnArrayInt: Dice si un número está o no dentro de un array.*/
 
-function estaEnArrayInt(){
+function estaEnArrayInt($array, $num){
+
+    $encuentra = false;
+
+    foreach($array as $valor){
+
+        if($valor == $num){
+
+            $encuentra = true;
+
+        }
+
+    }
+
+    return $encuentra;
 
 }
 
 /*6. posicionEnArray: Busca un número en un array y devuelve la posición (el índice) en la que
 se encuentra.*/
 
-function posicionEnArray(){
+function posicionEnArray($array, $num){
 
+    $pos = -1;
+
+    for($i = 0; $i < count($array); $i++){
+
+        if($array[$i] == $num){
+
+            $pos = $i;
+
+        }
+    }
+
+    if($pos == -1){
+
+        $pos = "No encontrado <br>";
+
+    }
+
+    return $pos;
 }
 
 /*7. volteaArrayInt: Le da la vuelta a un array.*/
 
-function volteaArrayInt(){
+function volteaArrayInt($array){
+
+    $arrayVuelta = [];
+    $pos = 0;
+
+    for($i = count($array) - 1; $i > -1; $i--){
+
+        $arrayVuelta[$pos] = $array[$i];
+
+        $pos++;
+
+    }
+
+    return $arrayVuelta;
 
 }
 
@@ -372,11 +469,15 @@ function volteaArrayInt(){
 
 function rotaDerechaArrayInt(){
 
+
+
 }
 
 /*9. rotaIzquierdaArrayInt: Rota n posiciones a la izquierda los números de un array.*/
 
 function rotaIzquierdaArrayInt(){
+
+    
 
 }
 ?>

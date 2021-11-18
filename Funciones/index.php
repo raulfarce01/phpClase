@@ -10,11 +10,29 @@
     
     <?php 
     
-        $num = 123456789;
+        //$num = 123456789;
 
         include_once 'funciones.inc.php';
 
-        echo juntaNumeros($num, 464);
+        //echo juntaNumeros($num, 464);
+
+        $array = generaArrayInt(10, 0, 20);
+
+        //echo posicionEnArray($array, 8) . '<br>';
+
+        /*if(estaEnArrayInt($array, 8)){
+
+            echo 'Encontrado';
+
+        }else{
+
+            echo 'No encontrado';
+
+        }*/
+
+        print_r(volteaArrayInt($array));
+
+        print_r($array);
     
     ?>
 
