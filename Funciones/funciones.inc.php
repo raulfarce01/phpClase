@@ -467,17 +467,55 @@ function volteaArrayInt($array){
 
 /*8. rotaDerechaArrayInt: Rota n posiciones a la derecha los números de un array.*/
 
-function rotaDerechaArrayInt(){
+function rotaDerechaArrayInt($array, $pos){
 
+    $arrayRotado = [];
+    $posIni = 0;
+    
+    for($i = 0; $i < count($array); $i++){
 
+        if($pos >= count($array)){
+
+            $arrayRotado[$posIni] = $array[$i];
+            $posIni++;
+
+        }else{
+
+            $arrayRotado[$pos] = $array[$i];
+            $pos++;
+
+        }
+
+    }
+
+    return $arrayRotado;
 
 }
 
 /*9. rotaIzquierdaArrayInt: Rota n posiciones a la izquierda los números de un array.*/
 
-function rotaIzquierdaArrayInt(){
+function rotaIzquierdaArrayInt($array, $pos){
 
+    $arrayRotado = [];
+    $posIni = count($array) - 1;
+    $cuenta = 0;
     
+    for($i = 0; $i < count($array); $i++){
+
+        if($i + $pos >= count($array)){
+
+            $arrayRotado[$i] = $array[$cuenta];
+            $cuenta++;
+
+        }else{
+
+            $arrayRotado[$i] = $array[$i + $pos];
+
+        }
+
+    }
+
+    return $arrayRotado;
 
 }
 ?>

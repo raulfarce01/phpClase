@@ -30,7 +30,9 @@
 
         }*/
 
-        print_r(volteaArrayInt($array));
+        print_r(rotaIzquierdaArrayInt($array, 2));
+
+        echo '<br>';
 
         print_r($array);
     
