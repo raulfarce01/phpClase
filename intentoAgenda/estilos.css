@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    text-align: center;
+    margin: 5pt 5pt;
+}
+
+.boton {
+    margin-top: 5pt;
+}
+
+.enviar {
+    height: 3em;
+    width: 10em;
+    padding: 10pt 10pt;
+    margin-left: 15pt;
+    background-color: rgb(200, 247, 154);
+    border: 0;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.enviar:hover {
+    background-color: chartreuse;
+    border: 0;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+body {
+    background-color: plum;
+}
+
+table {
+    border: 1px solid black;
+    background-color: rgb(224, 228, 174);
+    margin: auto;
+    margin-top: 20pt;
+    margin-bottom: 30pt;
+}
+
+td {
+    text-align: center;
+    border: 1px solid black;
+    padding-left: 3em;
+    padding-right: 3em;
+}
