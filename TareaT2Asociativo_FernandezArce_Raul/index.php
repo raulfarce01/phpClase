@@ -66,6 +66,18 @@
     <table>
         <tr>
 
+        <?php
+
+            if(!empty($contacto)){
+                foreach($contacto as $clave => $valor){
+
+                    echo '<input type="hidden" name="contacto[' . $clave . ']" value="' . $valor . '">';
+
+                }
+            }
+
+        ?>
+
             <p>
                 <td><label for="nombre">Nombre: </label></td>
                 <td><input type="text" name="nombre" value="<?php echo $nombre; ?>" autofocus></td>
