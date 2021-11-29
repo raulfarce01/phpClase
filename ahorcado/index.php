@@ -19,6 +19,8 @@
             $letra = "";
             $oportunidad = 6;
 
+            $dibujo = "";
+
             $respuesta = $palabras[rand(0, 7)];
             $misterio = "";
 
@@ -38,6 +40,10 @@
                 $misterio = $_POST['misterio'];
                 $letra = $_POST['letra'];
                 $respuesta = $_POST['respuesta'];
+                $respuestaArray = $respuesta;
+
+                $respuestaArray = strtoupper($respuestaArray);
+                $respuestaArray = str_split($respuestaArray);
 
                 //echo strlen($respuesta);
 
@@ -55,34 +61,40 @@
 
                             echo 'Enhorabuena, has ganado';
 
+                            $oportunidad--;
+
                         }
 
                     }else{
 
-                        for($i = 0; $i < strlen($respuesta); $i++){
+                        print_r($respuestaArray);
+                        echo $letra;
 
-                            //echo "Entra for";
+                        $dibujo = dibuja($oportunidad);
+
+                        if(!in_array(strtoupper($letra), $respuestaArray)){
         
-                            //echo $respuesta[$i] . "<br>";
-        
-                            if(strtoupper($letra) == strtoupper($respuesta[$i])){
-        
-                                $misterio[$i] = strtoupper($letra);
-                                //echo $letra;
-        
+                            $oportunidad--;
+    
+                        }else{
+
+                            for($i = 0; $i < strlen($respuesta); $i++){
+
+                                //echo "Entra for";
+            
+                                //echo $respuesta[$i] . "<br>";
+            
+                                if(strtoupper($letra) == strtoupper($respuesta[$i])){
+            
+                                    $misterio[$i] = strtoupper($letra);
+                                    //echo $letra;
+            
+                                }
+                                
                             }
-        
-                            if(!in_array(strtoupper($letra), strtoupper($respuesta))){
-        
-                                $dibujo = dibuja($oportunidad);
-        
-                            }
-                            
-                            
                         }
 
-                        $oportunidad--;
-
+                        
                         echo $dibujo;
 
                         echo "<p> Te quedan " . $oportunidad . " oportunidades </p>";

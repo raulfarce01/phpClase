@@ -5,57 +5,536 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>DRAE</title>
 </head>
 
 <body>
-    <table>
+    <div class="container">
+        <div class="header__region region region-header">
+            <div class="dle-header">
+                <div class="col-3 align-left">
+                    <a rel="noopener" target="_blank" href="https://www.rae.es" title="Real Academia Española"><img alt="Real Academia Española" class="b-lazy b-loaded" src="/images/logos/rae.png"><noscript><img alt="Real Academia Española" src="/images/logos/rae.png"/></noscript></a>
+                </div>
+                <div class="col-3-centro align-center">
+                    <a href="/" title="«Diccionario de la lengua española»">
+                        <div class="spr_dle90x110"></div>
+                    </a>
+                </div>
+                <div class="col-3 align-right">
+                    <a rel="noopener" target="_blank" href="https://www.asale.org" title="Asociación de Academias de la Lengua Española"><img alt="Asociación de Academias de la Lengua Española" class="b-lazy b-loaded" src="/images/logos/ASALE2.png"><noscript><img alt="Asociación de Academias de la Lengua Española" src="/images/logos/ASALE2.png"/></noscript></a>
+                </div>
+            </div>
+            <div class="cb"></div>
+        </div>
+        <div id="block-superfish" class="block block-superfish last even">
+            <div>
+                <div class="sf-accordion-toggle sf-style-blue"><a href="#" id="superfish-1-toggle"><span>☰</span></a></div>
+                <ul id="superfish-1-accordion" class="menu sf-menu sf-main-menu sf-style-blue sf-total-items-4 sf-parent-items-1 sf-single-items-3 sf-accordion sf-hidden">
+                    <li class="active-trail first odd sf-item-1 sf-depth-1 sf-no-children"><a href="/" title="Versión electrónica de la 23.ª edición del «Diccionario de la lengua española» («DLE» 23.4: actualización, diciembre 2020)" class="sf-depth-1 active">Diccionario de la lengua española</a></li>
+                    <li class="middle even sf-item-2 sf-depth-1 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/obras-academicas/diccionarios/diccionario-de-la-lengua-espanola" title="«Diccionario de la lengua española» - Edición del Tricentenario" class="sf-depth-1">Edición del Tricentenario</a></li>
+                    <li class="middle odd sf-item-3 sf-depth-1 sf-no-children"><a href="/contenido/actualizaci%C3%B3n-2020" title="Actualización 2020" class="sf-depth-1"><span style="color:rgb(255, 50, 122)">Actualización 2020</span></a></li>
+                    <li id="submenurae" class="last even sf-item-4 sf-depth-1 sf-total-children-10 sf-parent-children-0 sf-single-children-10 menuparent"><a rel="noopener" target="_blank" href="https://www.rae.es" title="" class="sf-depth-1 menuparent">RAE.es</a>
+                        <ul class="sf-hidden">
+                            <li class="first odd sf-item-1 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/recursos" title="" class="sf-depth-2">Recursos</a></li>
+                            <li class="middle even sf-item-2 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/formulario/unidrae" title="" class="sf-depth-2">UNIDRAE</a></li>
+                            <li class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/consultas-linguisticas" title="" class="sf-depth-2">Consultas lingüísticas</a></li>
+                            <li class="middle even sf-item-4 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/gramatica/nueva-gramatica" title="" class="sf-depth-2">Gramática</a></li>
+                            <li class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/ortografia/ortografia-2010" title="" class="sf-depth-2">Ortografía</a></li>
+                            <li class="middle even sf-item-6 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/banco-de-datos/corpes-xxi" title="" class="sf-depth-2">Corpes XXI</a></li>
+                            <li class="middle odd sf-item-7 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/diccionarios/nuevo-diccionario-historico" title="" class="sf-depth-2">NDHE</a></li>
+                            <li class="middle even sf-item-8 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="http://archivo.rae.es" title="" class="sf-depth-2">Archivo</a></li>
+                            <li class="last even sf-item-10 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/boletines" title="" class="sf-depth-2">Boletines</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul id="superfish-1" class="menu sf-menu sf-main-menu sf-horizontal sf-style-blue sf-total-items-4 sf-parent-items-1 sf-single-items-3" style="display: none;">
+                    <li class="active-trail first odd sf-item-1 sf-depth-1 sf-no-children"><a href="/" title="Versión electrónica de la 23.ª edición del «Diccionario de la lengua española» («DLE» 23.4: actualización, diciembre 2020)" class="sf-depth-1 active">Diccionario de la lengua española</a></li>
+                    <li class="middle even sf-item-2 sf-depth-1 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/obras-academicas/diccionarios/diccionario-de-la-lengua-espanola" title="«Diccionario de la lengua española» - Edición del Tricentenario" class="sf-depth-1">Edición del Tricentenario</a></li>
+                    <li class="middle odd sf-item-3 sf-depth-1 sf-no-children"><a href="/contenido/actualizaci%C3%B3n-2020" title="Actualización 2020" class="sf-depth-1"><span style="color:rgb(255, 50, 122)">Actualización 2020</span></a></li>
+                    <li id="submenurae" class="last even sf-item-4 sf-depth-1 sf-total-children-10 sf-parent-children-0 sf-single-children-10 menuparent"><a rel="noopener" target="_blank" href="https://www.rae.es" title="" class="sf-depth-1 menuparent">RAE.es</a>
+                        <ul>
+                            <li class="first odd sf-item-1 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/recursos" title="" class="sf-depth-2">Recursos</a></li>
+                            <li class="middle even sf-item-2 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/formulario/unidrae" title="" class="sf-depth-2">UNIDRAE</a></li>
+                            <li class="middle odd sf-item-3 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/consultas-linguisticas" title="" class="sf-depth-2">Consultas lingüísticas</a></li>
+                            <li class="middle even sf-item-4 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/gramatica/nueva-gramatica" title="" class="sf-depth-2">Gramática</a></li>
+                            <li class="middle odd sf-item-5 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/ortografia/ortografia-2010" title="" class="sf-depth-2">Ortografía</a></li>
+                            <li class="middle even sf-item-6 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/banco-de-datos/corpes-xxi" title="" class="sf-depth-2">Corpes XXI</a></li>
+                            <li class="middle odd sf-item-7 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/diccionarios/nuevo-diccionario-historico" title="" class="sf-depth-2">NDHE</a></li>
+                            <li class="middle even sf-item-8 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="http://archivo.rae.es" title="" class="sf-depth-2">Archivo</a></li>
+                            <li class="last even sf-item-10 sf-depth-2 sf-no-children"><a rel="noopener" target="_blank" href="https://www.rae.es/boletines" title="" class="sf-depth-2">Boletines</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="cb"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <section id="diccionario">
+                    <div id="patrocinio">
+                        <div>
+                            <div class="pat_izda">Consulta posible gracias al compromiso con la cultura&nbsp;de&nbsp;la</div>
+                            <div class="pat_dcha">
+                                <a target="_blank" rel="noopener" href="https://obrasociallacaixa.org" title="Fundación “la Caixa“">
+                                    <div class="spr_fundacionlacaixa"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="c-b"></div>
+                        <div id="buscador">
+                            <form action="#" method="get" id="drae23" class="drae23" target="formularios">
+                                <label for="formList" class="sr-only">Tipos de búsqueda</label>
+                                <select id="formList" name="formList" class="formList">
+    <optgroup label="por palabras">
+    <option selected="" value="form">por palabras</option>
+    <option value="form2">por expresiones</option>
+    </optgroup>
+    <optgroup label="por lemas">
+    <option value="30">exacta</option>
+    <option value="31">empieza por</option>
+    <option value="32">termina en</option>
+    <option value="33">contiene</option>
+    </optgroup>
+    <optgroup label="miscelánea">
+    <option value="anagram">anagramas</option>
+    <option value="random">aleatoria</option>
+    </optgroup>
+    </select>
+                                <label for="wq" class="sr-only">vigesimotercera edición</label>
+                                <input type="search" name="w" id="wq" value="" placeholder="Escriba aquí la palabra" autocomplete="off" autocapitalize="off" class="ui-autocomplete-input is-keypad wq">
+                                <div class="keyboard" style="display:none;position:absolute;">
+                                    <div class="cab">Tabla de caracteres especiales</div>
+                                    <div class="keys"><a href="#">á</a><a href="#">é</a><a href="#">í</a><a href="#">ó</a><a href="#">ú</a><a href="#">ü</a><a href="#">ñ</a></div>
+                                    <div class="keys"><a href="#">Á</a><a href="#">É</a><a href="#">Í</a><a href="#">Ó</a><a href="#">Ú</a><a href="#">Ü</a><a href="#">Ñ</a></div>
+                                </div>
+                                <i id="keyfilter" class="keyboard_trigger keyfilter icon-keyboard-o" title="Puede utilizar estos caracteres si su teclado o sistema no disponen de ellos." style="visibility: visible;"></i>
+                                <input type="submit" class="button" value="Consultar">
+                            </form>
+                        </div>
+                    </div>
+                    <div id="resultados">
+                        <article id="a1laMnE">
+                            <header title="Definición de tonto, tonta" class="f">tonto, ta</header>
+                            <p><span style="color: blue;">1.</span> Persona que aparece en la foto</p>
+                            <img src="C:\Users\rauli\Downloads\foto.jpg" />
 
-        <tr>
 
-            <td>Prueba</td>
-            <td>Prueba</td>
 
-        </tr>
-        <tr>
 
-            <td>Prueba</td>
-            <td>Prueba</td>
 
-        </tr>
-        <tr>
 
-            <td>Prueba</td>
-            <td>Prueba</td>
 
-        </tr>
-        <tr>
 
-            <td>Prueba</td>
-            <td>Prueba</td>
 
-        </tr>
 
-    </table>
 
-    <form action="#" method="post">
 
-        <p>
-            <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" autofocus>
-            <input type="hidden" name="arrayNombre">
-        </p>
-        <p>
-            <label for="tlf">Teléfono: </label>
-            <input type="text" name="tlf" size="19" pattern="(\d{9}|\w)">
-            <input type="hidden" name="arrayTlf">
 
-        </p>
-        <p class="boton">
-            <input type="submit" value="Enviar" class="enviar">
-        </p>
-    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </article>
+                        <p class="o">Real Academia Española © Todos los derechos reservados</p>
+                        <div class="compartir">
+                            <a title="Compartir en Facebook" class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdle.rae.es%2Ftonto" target="_blank" rel="noopener" aria-label="">
+                                <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
+                                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"></path></svg></div>
+                                </div>
+                            </a>
+                            <a title="Compartir en Twitter" class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=tonto, tonta - Diccionario de la lengua española&amp;url=https%3A%2F%2Fdle.rae.es%2Ftonto" target="_blank" rel="noopener" aria-label="">
+                                <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+                                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"></path></svg></div>
+                                </div>
+                            </a>
+                            <a title="Compartir por correo electrónico" class="resp-sharing-button__link" href="mailto:?subject=tonto, tonta - Diccionario de la lengua española&amp;body=https://dle.rae.es/tonto%0A%0A1. adj. Dicho de una persona: Falta o escasa de entendimiento o de razón. U. t. c. s. 2. adj. Propio de una persona tonta. 3. adj. coloq. Dicho de una persona: Que padece una deficiencia mental. U. t. c. s."
+                                target="_self" rel="noopener" aria-label="">
+                                <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
+                                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"></path></svg></div>
+                                </div>
+                            </a>
+                            <a title="Compartir en WhatsApp" class="resp-sharing-button__link" href="whatsapp://send?text=tonto, tonta - Diccionario de la lengua española%20https%3A%2F%2Fdle.rae.es%2Ftonto" target="_blank" rel="noopener" aria-label="">
+                                <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
+                                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z"></path></svg></div>
+                                </div>
+                            </a>
+                            <a title="Compartir en Telegram" class="resp-sharing-button__link" href="https://telegram.me/share/url?text=tonto, tonta - Diccionario de la lengua española&amp;url=https%3A%2F%2Fdle.rae.es%2Ftonto" target="_blank" rel="noopener" aria-label="">
+                                <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small">
+                                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z"></path></svg></div>
+                                </div>
+                            </a>
+                            <a title="Compartir en Pinterest" class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fdle.rae.es%2Ftonto&amp;media=https%3A%2F%2Fdle.rae.es%2Ftonto&amp;description=1. adj. Dicho de una persona: Falta o escasa de entendimiento o de razón. U. t. c. s. 2. adj. Propio de una persona tonta. 3. adj. coloq. Dicho de una persona: Que padece una deficiencia mental. U. t. c. s."
+                                target="_blank" rel="noopener" aria-label="">
+                                <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small">
+                                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.14.5C5.86.5 2.7 5 2.7 8.75c0 2.27.86 4.3 2.7 5.05.3.12.57 0 .66-.33l.27-1.06c.1-.32.06-.44-.2-.73-.52-.62-.86-1.44-.86-2.6 0-3.33 2.5-6.32 6.5-6.32 3.55 0 5.5 2.17 5.5 5.07 0 3.8-1.7 7.02-4.2 7.02-1.37 0-2.4-1.14-2.07-2.54.4-1.68 1.16-3.48 1.16-4.7 0-1.07-.58-1.98-1.78-1.98-1.4 0-2.55 1.47-2.55 3.42 0 1.25.43 2.1.43 2.1l-1.7 7.2c-.5 2.13-.08 4.75-.04 5 .02.17.22.2.3.1.14-.18 1.82-2.26 2.4-4.33.16-.58.93-3.63.93-3.63.45.88 1.8 1.65 3.22 1.65 4.25 0 7.13-3.87 7.13-9.05C20.5 4.15 17.18.5 12.14.5z"></path></svg></div>
+                                </div>
+                            </a>
+                            <a title="Compartir en LinkedIn" class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fdle.rae.es%2Ftonto&amp;title=tonto, tonta - Diccionario de la lengua española&amp;summary=1. adj. Dicho de una persona: Falta o escasa de entendimiento o de razón. U. t. c. s. 2. adj. Propio de una persona tonta. 3. adj. coloq. Dicho de una persona: Que padece una deficiencia mental. U. t. c. s.&amp;source=https%3A%2F%2Fdle.rae.es%2Ftonto"
+                                target="_blank" rel="noopener" aria-label="">
+                                <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+                                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                                        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"></path></svg></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="app">
+                        <span id="appA"><a rel="noopener" target="_blank" title="Consíguelo en la App Store" href="https://itunes.apple.com/es/app/dle/id1011116985?mt=8"><div class="spr_badge-appstore-lrg-96x28"></div></a></span>
+                        <span id="appG"> <a rel="noopener" target="_blank" title="Disponible en Google Play" href="https://play.google.com/store/apps/details?id=es.rae.dle"><div class="spr_google-play-badge-100x39"></div></a></span>
+                    </div>
+                    <div id="enclave">
+                        <div class="enclavei">
+                            <a target="_blank" rel="noopener" href="https://enclave.rae.es/?utm_source=dle&amp;utm_medium=logo&amp;utm_content=logo_enclave&amp;utm_campaign=dle_banner" title="Nueva plataforma de recursos lingüísticos de la RAE">
+                                <div class="spr_logo-enclave-rae"></div>
+                            </a>
+                        </div>
+                        <div class="enclavet"><a target="_blank" rel="noopener" href="https://enclave.rae.es?utm_source=dle&amp;utm_medium=text&amp;utm_content=textlink&amp;utm_campaign=dle_banner" title="¡Probar gratis durante 7 días!">Descubra la nueva plataforma <br> &nbsp; de recursos lingüísticos de la RAE</a></div>
+                        <div class="cb"></div>
+                    </div>
+                </section>
+            </div>
+            <div data-nosnippet="" class="col-sm-4 bloqueIn">
+                <nav id="navLateral">
+                    <ul>
+                        <li>
+                            <a rel="noopener" target="_blank" href="/docs/DLE-Edición-del-Tricentenario.pdf" title="«Diccionario de la lengua española» - Edición del Tricentenario">
+                                <div class="spr_edtri"></div>Edición del Tricentenario</a>
+                        </li>
+                        <li>
+                            <a id="ayuda" class="text" href="/contenido/ayuda" title="Ayuda sobre los métodos de búsqueda">
+                                <div class="spr_ay"></div>Guía de consulta</a>
+                        </li>
+                        <li>
+                            <a id="cita" class="text" href="/contenido/cita" title="Modo de cita">
+                                <div class="spr_cita"></div>Modo de cita</a>
+                        </li>
+                        <li>
+                            <a rel="noopener" target="_blank" href="https://www.rae.es/formulario/unidrae" title="Envíe las propuestas relacionadas con el Diccionario a la Unidad Interactiva">
+                                <div class="spr_unidrae"></div>UNIDRAE</a>
+                        </li>
+                        <li>
+                            <a rel="noopener" target="_blank" href="https://www.rae.es/consultas-linguisticas/formulario" title="Envíe sus consultas al Departamento de «Español al día»">
+                                <div class="spr_consultas"></div>Consultas lingüísticas</a>
+                        </li>
+                        <li>
+                            <a id="aviso" class="text" href="/contenido/actualización-2020" title="Actualización 2020">
+                                <div class="spr_pnwe2"></div>Actualización 2020</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div>
+                    <h3 class="palabraT">Palabra del día</h3>
+                    <p id="wotd" class="words"><a data-cat="WOTD" data-acc="WOTD" data-eti="dicroísmo" href="/dicroísmo?m=wotd2">dicroísmo</a></p>
+                    <p class="palabraD">martes, 23 de noviembre de 2021</p>
+                </div>
+                <h3>Tuits de <a target="_blank" rel="noopener" href="https://twitter.com/RAEinforma">@RAEinforma</a></h3>
+                <div data-nosnippet="" style="width:100%" id="twitterfrm">
+                    <div class="twitter">
+                        <div class="timeline-Viewport">
+                            <ol class="timeline-TweetList">
+                                <li class="timeline-TweetList-tweet customisable-border">
+                                    <div class="timeline-Tweet  u-cf js-tweetIdInfo js-clickToOpenTarget" data-tweet-id="1463221097411878925" data-rendered-tweet-id="1463221097411878925" data-click-to-open-target="https://twitter.com/RAEinforma/status/1463221097411878925" data-twcon="timelinechrome"
+                                        data-scribe="component:tweet">
+                                        <div class="timeline-Tweet-brand u-floatRight">
+                                            <div class="Icon Icon--twitter " aria-label="Ver en Twitter" title="Ver en Twitter" role="presentation"></div>
+                                        </div>
+                                        <div class="timeline-Tweet-author  js-inViewportScribingTarget">
+                                            <a class="TweetAuthor-avatar  Identity-avatar u-linkBlend" data-scribe="element:user_link" rel="noopener" href="https://twitter.com/RAEinforma" aria-label="RAE (nombre de pantalla: RAEinforma)">
+                                                <div class="spr_logo-mini"></div>
+                                            </a>
+                                            <div class="TweetAuthor js-inViewportScribingTarget" data-scribe="component:author">
+                                                <a class="TweetAuthor-link Identity u-linkBlend" data-scribe="element:user_link" rel="noopener" href="https://twitter.com/RAEinforma" aria-label="RAE (nombre de pantalla: RAEinforma)">
+                                                    <div class="TweetAuthor-nameScreenNameContainer">
+                                                        <span class="TweetAuthor-decoratedName">
+    <span class="TweetAuthor-name Identity-name customisable-highlight" title="RAE" data-scribe="element:name">RAE</span>
+                                                        <span class="TweetAuthor-verifiedBadge" data-scribe="element:verified_badge"><div class="Icon Icon--verified " aria-label="Cuenta verificada" title="Cuenta verificada" role="img"></div>
+    <b class="u-hiddenVisually">✔</b></span>
+                                                        </span>
+                                                        <span class="TweetAuthor-screenName Identity-screenName" title="@RAEinforma" data-scribe="element:screen_name" dir="ltr">@RAEinforma</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p class="timeline-Tweet-text" lang="es" dir="ltr">La correspondencia del académico de número y secretario perpetuo Julio Casares (1877-1964), que se conserva en el Archivo de la RAE, ha sido inventariada recientemente. Puede consultarla aquí:
+                                            <a rel="noopener"
+                                                href="https://t.co/kStCg8lM16" dir="ltr" data-expanded-url="http://archivo.rae.es/index.php/sirpf" class="link customisable" target="_blank" title="http://archivo.rae.es/index.php/sirpf" data-scribe="element:url"><span class="u-hiddenVisually">http://</span>archivo.rae.es/index.php/sirpf<span class="u-hiddenVisually">&nbsp;</span></a>.
+                                        </p>
+                                        <div class="timeline-Tweet-media">
+                                            <article class="MediaCard
+               
+               customisable-border" data-scribe="component:card" dir="ltr">
+                                                <div class="MediaCard-media" data-scribe="element:photo">
+                                                    <div class="MediaCard-widthConstraint js-cspForcedStyle" style="max-width: 456px" data-style="max-width: 456px">
+                                                        <div class="MediaCard-mediaContainer js-cspForcedStyle MediaCard--roundedTop MediaCard--roundedBottom" style="padding-bottom: 100.0000%" data-style="padding-bottom: 100.0000%">
+                                                            <a rel="noopener" href="https://twitter.com/RAEinforma/status/1463221097411878925/photo/1" class="MediaCard-mediaAsset NaturalImage">
+                                                                <img class="b-lazy NaturalImage-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://pbs.twimg.com/media/FE5n1aZWYAQ9gQl.jpg" width="456" height="556" title="Ver imagen en Twitter" alt="Ver imagen en Twitter">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="timeline-Tweet-metadata">
+                                            <a rel="noopener" href="https://twitter.com/RAEinforma/status/1463221097411878925" class="timeline-Tweet-timestamp" data-scribe="element:mini_timestamp">
+                                                <time class="dt-updated" datetime="2021-11-23T19:01:09+0000" pubdate="" title="Publicado a las: 23 de noviembre de 2021 19:01:09 (UTC)" aria-label="Publicado hace 1  hora">
+    1<abbr title=" hora">h</abbr>
+    </time></a>
+                                        </div>
+                                        <ul class="timeline-Tweet-actions" data-scribe="component:actions" role="list" aria-label="Acciones del Tweet">
+                                            <li class="timeline-Tweet-action" role="listitem">
+                                                <a class="TweetAction TweetAction--heart web-intent" rel="noopener" href="https://twitter.com/intent/like?tweet_id=1463221097411878925" data-scribe="element:heart">
+                                                    <div class="Icon Icon--heart TweetAction-icon Icon--heart" aria-label="Me gusta" title="Me gusta" role="img"></div>
+                                                </a>
+                                            </li>
+                                            <li class="timeline-Tweet-action timeline-ShareMenu" role="listitem">
+                                                <a class="TweetAction TweetAction--share js-showShareMenu" rel="noopener" href="#" aria-haspopup="true" data-scribe="component:share">
+                                                    <div class="Icon Icon--share TweetAction-icon" aria-label="Compartir Tweet" title="Compartir Tweet" role="img"></div>
+                                                </a>
+                                                <div class="timeline-ShareMenu-container">
+                                                    <div class="timeline-ShareMenu-caret"></div>
+                                                    <h3 class="timeline-ShareMenu-title">Compartir en</h3>
+                                                    <ul role="list">
+                                                        <li><a class="timeline-ShareMenu-option" rel="noopener" href="https://twitter.com/intent/retweet?tweet_id=1463221097411878925" role="listitem" data-scribe="element:twitter">Twitter</a></li>
+                                                        <li><a class="timeline-ShareMenu-option" rel="noopener" href="https://facebook.com/dialog/share?app_id=361037704438612&amp;display=popup&amp;href=https%3A%2F%2Ftwitter.com%2FRAEinforma%2Fstatus%2F1463221097411878925%3Fref_src%3Dtwsrc%255Etfw%257Ctwcamp%255Eshare_intent%257Ctwterm%255E1463221097411878925"
+                                                                role="listitem" data-scribe="element:facebook">Facebook</a></li>
+                                                        <li><a class="timeline-ShareMenu-option" rel="noopener" href="https://linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ftwitter.com%2FRAEinforma%2Fstatus%2F1463221097411878925%3Fref_src%3Dtwsrc%255Etfw%257Ctwcamp%255Eshare_intent%257Ctwterm%255E1463221097411878925"
+                                                                role="listitem" data-scribe="element:linkedin">LinkedIn</a></li>
+                                                        <li><a class="timeline-ShareMenu-option" rel="noopener" href="https://tumblr.com/widgets/share/tool?canonicalUrl=https%3A%2F%2Ftwitter.com%2FRAEinforma%2Fstatus%2F1463221097411878925%3Fref_src%3Dtwsrc%255Etfw%257Ctwcamp%255Eshare_intent%257Ctwterm%255E1463221097411878925"
+                                                                role="listitem" data-scribe="element:tumblr">Tumblr</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="timeline-TweetList-tweet customisable-border">
+                                    <div class="timeline-Tweet  u-cf js-tweetIdInfo js-clickToOpenTarget" data-tweet-id="1463206116729491459" data-rendered-tweet-id="1463206116729491459" data-click-to-open-target="https://twitter.com/RAEinforma/status/1463206116729491459" data-twcon="timelinechrome"
+                                        data-scribe="component:tweet">
+                                        <div class="timeline-Tweet-brand u-floatRight">
+                                            <div class="Icon Icon--twitter " aria-label="Ver en Twitter" title="Ver en Twitter" role="presentation"></div>
+                                        </div>
+                                        <div class="timeline-Tweet-author ">
+                                            <a class="TweetAuthor-avatar  Identity-avatar u-linkBlend" data-scribe="element:user_link" rel="noopener" href="https://twitter.com/RAEinforma" aria-label="RAE (nombre de pantalla: RAEinforma)">
+                                                <div class="spr_logo-mini"></div>
+                                            </a>
+                                            <div class="TweetAuthor js-inViewportScribingTarget" data-scribe="component:author">
+                                                <a class="TweetAuthor-link Identity u-linkBlend" data-scribe="element:user_link" rel="noopener" href="https://twitter.com/RAEinforma" aria-label="RAE (nombre de pantalla: RAEinforma)">
+                                                    <div class="TweetAuthor-nameScreenNameContainer">
+                                                        <span class="TweetAuthor-decoratedName">
+    <span class="TweetAuthor-name Identity-name customisable-highlight" title="RAE" data-scribe="element:name">RAE</span>
+                                                        <span class="TweetAuthor-verifiedBadge" data-scribe="element:verified_badge"><div class="Icon Icon--verified " aria-label="Cuenta verificada" title="Cuenta verificada" role="img"></div>
+    <b class="u-hiddenVisually">✔</b></span>
+                                                        </span>
+                                                        <span class="TweetAuthor-screenName Identity-screenName" title="@RAEinforma" data-scribe="element:screen_name" dir="ltr">@RAEinforma</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <p class="timeline-Tweet-text" lang="es" dir="ltr">Consultas de la semana | ¿Es «Hola, amigo» u «Hola amigo»?<br><br>Es «Hola, amigo». Se escribe siempre coma para aislar el vocativo, es decir, la palabra que se usa para apelar al interlocutor: «¿Bailamos, María?»;
+                                            «Un café, camarero, por favor»; «Hola, amigo».
+                                        </p>
+                                        <div class="timeline-Tweet-media">
+                                            <article class="MediaCard
+               
+               customisable-border" data-scribe="component:card" dir="ltr">
+                                                <div class="MediaCard-media" data-scribe="element:photo">
+                                                    <div class="MediaCard-widthConstraint js-cspForcedStyle" style="max-width: 792px" data-style="max-width: 792px">
+                                                        <div class="MediaCard-mediaContainer js-cspForcedStyle MediaCard--roundedTop MediaCard--roundedBottom" style="padding-bottom: 75.7576%" data-style="padding-bottom: 75.7576%">
+                                                            <a rel="noopener" href="https://twitter.com/RAEinforma/status/1463206116729491459/photo/1" class="MediaCard-mediaAsset NaturalImage">
+                                                                <img class="b-lazy NaturalImage-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://pbs.twimg.com/media/FE5aNZ-XEAk1qRt.jpg" width="792" height="600" title="Ver imagen en Twitter" alt="Ver imagen en Twitter">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                        <div class="timeline-Tweet-metadata">
+                                            <a rel="noopener" href="https://twitter.com/RAEinforma/status/1463206116729491459" class="timeline-Tweet-timestamp" data-scribe="element:mini_timestamp">
+                                                <time class="dt-updated" datetime="2021-11-23T18:01:37+0000" pubdate="" title="Publicado a las: 23 de noviembre de 2021 18:01:37 (UTC)" aria-label="Publicado hace 2  horas">
+    2<abbr title=" horas">h</abbr>
+    </time></a>
+                                        </div>
+                                        <ul class="timeline-Tweet-actions" data-scribe="component:actions" role="list" aria-label="Acciones del Tweet">
+                                            <li class="timeline-Tweet-action" role="listitem">
+                                                <a class="TweetAction TweetAction--heart web-intent" rel="noopener" href="https://twitter.com/intent/like?tweet_id=1463206116729491459" data-scribe="element:heart">
+                                                    <div class="Icon Icon--heart TweetAction-icon Icon--heart" aria-label="Me gusta" title="Me gusta" role="img"></div>
+                                                </a>
+                                            </li>
+                                            <li class="timeline-Tweet-action timeline-ShareMenu" role="listitem">
+                                                <a class="TweetAction TweetAction--share js-showShareMenu" rel="noopener" href="#" aria-haspopup="true" data-scribe="component:share">
+                                                    <div class="Icon Icon--share TweetAction-icon" aria-label="Compartir Tweet" title="Compartir Tweet" role="img"></div>
+                                                </a>
+                                                <div class="timeline-ShareMenu-container">
+                                                    <div class="timeline-ShareMenu-caret"></div>
+                                                    <h3 class="timeline-ShareMenu-title">Compartir en</h3>
+                                                    <ul role="list">
+                                                        <li><a class="timeline-ShareMenu-option" rel="noopener" href="https://twitter.com/intent/retweet?tweet_id=1463206116729491459" role="listitem" data-scribe="element:twitter">Twitter</a></li>
+                                                        <li><a class="timeline-ShareMenu-option" rel="noopener" href="https://facebook.com/dialog/share?app_id=361037704438612&amp;display=popup&amp;href=https%3A%2F%2Ftwitter.com%2FRAEinforma%2Fstatus%2F1463206116729491459%3Fref_src%3Dtwsrc%255Etfw%257Ctwcamp%255Eshare_intent%257Ctwterm%255E1463206116729491459"
+                                                                role="listitem" data-scribe="element:facebook">Facebook</a></li>
+                                                        <li><a class="timeline-ShareMenu-option" rel="noopener" href="https://linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ftwitter.com%2FRAEinforma%2Fstatus%2F1463206116729491459%3Fref_src%3Dtwsrc%255Etfw%257Ctwcamp%255Eshare_intent%257Ctwterm%255E1463206116729491459"
+                                                                role="listitem" data-scribe="element:linkedin">LinkedIn</a></li>
+                                                        <li><a class="timeline-ShareMenu-option" rel="noopener" href="https://tumblr.com/widgets/share/tool?canonicalUrl=https%3A%2F%2Ftwitter.com%2FRAEinforma%2Fstatus%2F1463206116729491459%3Fref_src%3Dtwsrc%255Etfw%257Ctwcamp%255Eshare_intent%257Ctwterm%255E1463206116729491459"
+                                                                role="listitem" data-scribe="element:tumblr">Tumblr</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-nosnippet="" class="faldon_publi">
+                <div class="bloque_publi DE">
+                    <h3><i>Diccionario del estudiante</i></h3>
+                    <noscript><img class="img-responsive con-borde" src="/images/DE/DE1.jpg" title="Aplicación móvil del «Dicionario del estudiante»" alt="Aplicación móvil del «Dicionario del estudiante»" width="300" height="300" usemap="#DEmap"/></noscript>
+                    <img class="img-responsive con-borde b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/DE/DE1.jpg" title="Aplicación móvil del «Dicionario del estudiante»" alt="Aplicación móvil del «Dicionario del estudiante»"
+                        width="300" height="300" usemap="#DEmap">
+                    <map name="DEmap">
+    <area shape="rect" coords="1,0,295,265" title="Aplicación móvil del «Diccionario del estudiante» en Letras de la Real Academia Española" alt="Aplicación móvil del «Diccionario del estudiante» en Letras de la Real Academia Española" rel="noopener" target="_blank" href="https://letras.rae.es/libros-electronicos/180-diccionario-del-estudiante-aplicacion-movil.html">
+    <area shape="rect" coords="258,269,298,281" title="Aplicación móvil del «Diccionario del estudiante» para dispositivos Android" alt="Aplicación móvil del «Diccionario del estudiante» para dispositivos Android" target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=es.rae.estudiante">
+    <area shape="rect" coords="257,284,297,297" title="Aplicación móvil del «Diccionario del estudiante» para iPhone, iPod touch y iPad" alt="Aplicación móvil del «Diccionario del estudiante» para iPhone, iPod touch y iPad" target="_blank" rel="noopener" href="https://itunes.apple.com/es/app/diccionario-del-estudiante/id1263062281?l=es">
+    </map>
+                </div>
+                <div class="bloque_publi dledes">
+                    <h3><i>DLE</i> descargable</h3>
+                    <noscript><img src="/images/dle_desc.jpg" alt="Aplicación móvil descargable de la Real Academia Española" width="300" height="300" usemap="#dledes"/></noscript><img class="img-responsive b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="/images/dle_desc.jpg" alt="Aplicación móvil descargable de la Real Academia Española" width="300" height="300" usemap="#dledes">
+                    <map name="dledes">
+    <area shape="rect" coords="208,1,298,32" title="Aplicación móvil descargable de la 23.ª edición del «Diccionario de la lengua española» - Edición del Tricentenario para dispositivos Android" alt="Aplicación móvil descargable de la 23.ª edición del «Diccionario de la lengua española» - Edición del Tricentenario para dispositivos Android" rel="noopener" target="_blank" href="https://play.google.com/store/apps/details?id=es.rae.dle_offline">
+    <area shape="rect" coords="207,54,298,90" title="Aplicación móvil descargable de la 23.ª edición del «Diccionario de la lengua española» - Edición del Tricentenario para iPhone, iPod touch y iPad" alt="Aplicación móvil descargable de la 23.ª edición del «Diccionario de la lengua española» - Edición del Tricentenario para iPhone, iPod touch y iPad" rel="noopener" target="_blank" href="https://itunes.apple.com/es/app/dle-descargable/id1172275338?mt=8&amp;amp;uo=4&amp;amp;at=1010lpjB&amp;amp;ct=tas">
+    <area shape="rect" coords="21,126,74,186" title="Consulta el «Diccionario de la lengua española» sin conexión a internet" alt="Consulta el «Diccionario de la lengua española» sin conexión a internet" rel="noopener" target="_blank" href="https://www.rae.es/obras-academicas/diccionarios/diccionario-de-la-lengua-espanola">
+    </map>
+                </div>
+                <div class="bloque_publi dejdes">
+                    <h3><i>Diccionario del español jurídico</i></h3>
+                    <a rel="noopener" target="_blank" href="https://dej.rae.es" title="«Diccionario del español jurídico» de la Real Academia Española">
+                        <noscript><img src="/images/dej.jpg" alt="«Diccionario del español jurídico» de la Real Academia Española" width="250" height="318"/></noscript><img class="img-responsive b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-src="/images/dej.jpg" alt="«Diccionario del español jurídico» de la Real Academia Española" width="250" height="318"></a>
+                </div>
+                <div class="cb"></div>
+            </div>
+            <div data-nosnippet="" class="faldon_publi">
+                <div class="bloque_publi qx">
+                    <h3>Obras académicas</h3>
+                    <a rel="noopener" target="_blank" href="https://letras.rae.es/home/188-libro-de-estilo-de-la-lengua-espanola.html">
+                        <noscript><img src="/images/LibroDeEstilo_300.jpg" title="«Libro de estilo de la lengua española según la norma panhispánica»" alt="Libro de estilo de la lengua española según la norma panhispánica" width="300" height="229"/></noscript>
+                        <img class="img-responsive b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/LibroDeEstilo_300.jpg" title="«Libro de estilo de la lengua española según la norma panhispánica»" alt="Libro de estilo de la lengua española según la norma panhispánica"
+                            width="300" height="229"></a>
+                </div>
+                <div class="bloque_publi bcrae">
+                    <h3>Biblioteca Clásica</h3>
+                    <a rel="noopener" target="_blank" href="https://www.rae.es/obras-academicas/bcrae" title="Biblioteca Clásica de la Real Academia Española (BCRAE)">
+                        <noscript><img src="/images/logos/BCRAEl.jpg" alt="Biblioteca Clásica de la Real Academia Española (BCRAE)" width="300" height="162"/></noscript><img class="img-responsive b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-src="/images/logos/BCRAEl.jpg" alt="Biblioteca Clásica de la Real Academia Española (BCRAE)" width="300" height="162"></a>
+                </div>
+                <div class="bloque_publi promo">
+                    <h3>Fundación</h3>
+                    <a rel="noopener" target="_blank" href="https://www.rae.es/fundacion/benefactores" title="Fundación pro Real Academia Española">
+                        <noscript><img class="img-responsive con-borde" src="/images/banner_benefactor_300x105.jpg" alt="Campaña para nuevos socios" width="297" height="104"/></noscript><img class="img-responsive con-borde b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-src="/images/banner_benefactor.jpg" alt="Campaña para nuevos socios" width="297" height="104"></a>
+                </div>
+                <div class="cb"></div>
+            </div>
+            <div class="cb"></div>
+            <div data-nosnippet="" id="ct" class="col-container">
+                <div class="col col-sm-5" id="ctfirst">
+                    <div class="align-center">
+                        <div class="spr_lraen"></div>
+                    </div>
+                    <p>El <em>Diccionario de la lengua española</em> es la obra lexicográfica de referencia de la Academia.</p>
+                    <p>La vigesimotercera edición, publicada en octubre de 2014 como colofón de las conmemoraciones del tricentenario de la Academia, es fruto de la colaboración de las veintidós corporaciones integradas en la <a rel="noopener" target="_blank"
+                            href="https://www.asale.org/">Asociación de Academias de la Lengua Española</a> (ASALE).</p>
+                </div>
+                <div class="col col-sm-4" id="ctsecond">
+                    <ul>
+                        <li><a rel="noopener" target="_blank" href="https://www.rae.es/diccionario-de-la-lengua-espanola/presentacion">Presentación</a></li>
+                        <li><a rel="noopener" target="_blank" href="https://www.rae.es/diccionario-de-la-lengua-espanola/como-se-hace-el-diccionario">Cómo se hace el <em>Diccionario</em></a></li>
+                        <li><a rel="noopener" target="_blank" href="https://www.rae.es/diccionario-de-la-lengua-espanola/la-23a-edicion-2014">La 23.ª edición (2014)</a>
+                            <ul>
+                                <li><a class="text" href="/contenido/preambulo">Preámbulo</a></li>
+                                <li><a class="text" href="/contenido/la-vigesimotercera-edicion">La vigesimotercera edición</a></li>
+                                <li><a rel="noopener" target="_blank" href="https://www.rae.es/sites/default/files/Articulos_de_muestra.pdf">Artículos de muestra</a></li>
+                                <li><a class="text" href="/contenido/advertencias">Advertencias</a></li>
+                                <li><a class="text" href="/contenido/abreviaturas-y-signos-empleados">Abreviaturas y signos empleados</a></li>
+                            </ul>
+                        </li>
+                        <li><a rel="noopener" target="_blank" href="https://www.rae.es/diccionario-de-la-lengua-espanola/el-diccionario-en-el-brae">El <em>Diccionario</em> en el <em>BRAE</em></a></li>
+                    </ul>
+                </div>
+                <div class="col col-sm-3" id="ctthird">
+                    <ul>
+                        <li><a rel="noopener" target="_blank" href="https://www.rae.es">RAE.es</a>
+                            <ul>
+                                <li><a rel="noopener" target="_blank" href="https://www.rae.es/recursos">Recursos</a></li>
+                                <li><a rel="noopener" target="_blank" href="https://www.rae.es/formulario/unidrae" title="Unidad Interactiva del Diccionario de la lengua española">UNIDRAE</a></li>
+                                <li><a rel="noopener" target="_blank" href="https://www.rae.es/consultas-linguisticas">Consultas lingüísticas</a></li>
+                                <li><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/gramatica/nueva-gramatica">Gramática</a></li>
+                                <li><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/ortografia/ortografia-2010">Ortografía</a></li>
+                                <li><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/banco-de-datos/corpes-xxi" title="Corpus del Español del Siglo XXI">CORPES XXI</a></li>
+                                <li><a rel="noopener" target="_blank" href="https://www.rae.es/recursos/diccionarios/nuevo-diccionario-historico" title="Nuevo diccionario histórico del español">NDHE</a></li>
+                                <li><a rel="noopener" target="_blank" href="http://archivo.rae.es" title="Archivo de la Real Academia Española">Archivo</a></li>
+                                <li><a rel="noopener" target="_blank" href="http://revistas.rae.es" title="RAE - Revistas digitales">Boletines</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="icons">
+                        <li>
+                            <a rel="noopener" target="_blank" href="https://www.facebook.com/rae" class="icon">
+                                <div class="spr_facebook"></div><span class="sr-only">Facebook</span></a>
+                        </li>
+                        <li>
+                            <a rel="noopener" target="_blank" href="https://www.twitter.com/RAEInforma" class="icon">
+                                <div class="spr_twitter"></div><span class="sr-only">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a rel="noopener" target="_blank" href="https://www.youtube.com/user/RAEInforma" class="icon">
+                                <div class="spr_youtube"></div><span class="sr-only">YouTube</span></a>
+                        </li>
+                        <li>
+                            <a rel="noopener" target="_blank" href="https://www.flickr.com/photos/raeinforma" class="icon">
+                                <div class="spr_flickr"></div><span class="sr-only">Flickr</span></a>
+                        </li>
+                        <li>
+                            <a rel="noopener" target="_blank" href="https://instagram.com/laraeinforma/" class="icon">
+                                <div class="spr_instagram"></div><span class="sr-only">Instagram</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <footer id="footer">
+                <div data-nosnippet="" id="footerfirst">
+                    <div itemscope="" itemtype="https://schema.org/Organization" class="copyright">
+                        <meta itemprop="image" content="/images/logos/rae.png">©&nbsp;<span itemprop="name">Real Academia Española</span>, <span class="date">2021</span>.<br>
+                        <div itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">Felipe IV, 4</span> - <span itemprop="postalCode">28014</span> <span itemprop="addressLocality">Madrid</span> - Teléfono: <span itemprop="telephone">(34) 914201478</span></div>
+                    </div><span class="content"><a href="/contenido/privacidad">Política de privacidad</a> - <a href="/contenido/cookies">Política de <em>cookies</em></a> - <a href="/contenido/aviso-legal">Aviso legal</a> - <a rel="noopener" target="_blank" href="https://www.rae.es/formulario/contacto">Contacto</a></span>
+                </div>
+            </footer>
+        </div>
+        <a title="Ir a la parte superior de la página" href="#" class="back-to-top icon-angle-up"></a>
+
+        <link rel="stylesheet" href="/css/200520.css">
+        <!--[if IE]>
+    <style>
+    #deletex{ display:none;}
+    </style>
+    <![endif]-->
+        <script src="/js/201102.js" async=""></script>
+    </div>
+    <div class="autocomplete-suggestions "></div>
 </body>
 
 </html>
