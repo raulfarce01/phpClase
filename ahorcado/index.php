@@ -61,16 +61,12 @@
 
                             echo 'Enhorabuena, has ganado';
 
-                            $oportunidad--;
-
                         }
 
                     }else{
 
                         print_r($respuestaArray);
                         echo $letra;
-
-                        $dibujo = dibuja($oportunidad);
 
                         if(!in_array(strtoupper($letra), $respuestaArray)){
         
@@ -94,6 +90,7 @@
                             }
                         }
 
+                        $dibujo = dibuja($oportunidad);
                         
                         echo $dibujo;
 
