@@ -58,3 +58,8 @@ input[type="submit"]:hover {
     font-size: 4em;
     color: yellow;
 }
+
+.clave {
+    color: darkred;
+    font-size: 2em;
+}
