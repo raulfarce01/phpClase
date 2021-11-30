@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahorcado</title>
+    <link href="./estilos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -16,6 +17,8 @@
 
         if(!isset($_POST['letra']) || !isset($_POST['oportunidad'])){
 
+            echo '<h1 class="bienve">Bienvenido al Juego del Ahorcado</h1>';
+
             $letra = "";
             $oportunidad = 6;
 
@@ -23,8 +26,6 @@
 
             $respuesta = $palabras[rand(0, 7)];
             $misterio = "";
-
-            $fallo = false;
 
             //echo $respuesta;
 
@@ -59,14 +60,14 @@
 
                         if(strtoupper($letra) == strtoupper($respuesta)){
 
-                            echo 'Enhorabuena, has ganado';
+                            echo '<p class="victoria">Enhorabuena, has ganado</p>';
 
                         }
 
                     }else{
 
-                        print_r($respuestaArray);
-                        echo $letra;
+                        //print_r($respuestaArray);
+                        //echo $letra;
 
                         if(!in_array(strtoupper($letra), $respuestaArray)){
         
@@ -102,31 +103,36 @@
 
                         }
                     }
-
-                
-            }else{
-
-                echo "Has perdido todas las oportunidades";
-
             }
-
         }
 
+        if($oportunidad > 0){
     ?>
     
     <form action="#" method="post">
 
-    <p>
+
         <label for="letra">Letra/Palabra</label>
         <input type="text" name="letra" autofocus>
         <input type="hidden" name="misterio" value="<?php echo $misterio ?>">
         <input type="hidden" name="oportunidad" value="<?php echo $oportunidad ?>">
         <input type="hidden" name="respuesta" value="<?php echo $respuesta ?>">
-    </p>
+
     <p>
         <input type="submit" value="Enviar">
     </p>
     </form>
 
+    <?php
+
+        }else if($oportunidad < 1){
+
+                echo "<p>Has perdido todas las oportunidades</p>";
+
+                echo '<p class="Respuesta">La palabra era <span class="clave">' . $respuesta . '</span></p>';
+
+        }
+
+    ?>
 </body>
 </html>
