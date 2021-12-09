@@ -53,7 +53,11 @@
 
                 echo '<p> La media es: ' . $_SESSION['media'] . '</p>';
 
+                unset($_SESSION['media']);
+                unset($_SESSION['cuenta']);
+                unset($_SESSION['total']);
 
+                session_destroy();
 
             }else{
 
