@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sesiones 2</title>
 </head>
 <body>
     
@@ -25,7 +25,7 @@
         if(!isset($_SESSION['cuentaImpar']) || !isset($_SESSION['impares']) || !isset($_SESSION['mayorPar'])){
 
             $_SESSION['impares'] = 0;
-            $_SESSION['cuentaImpart'] = 0;
+            $_SESSION['cuentaImpar'] = 0;
             $_SESSION['mayorPar'] = 0;
             $media = 0;
 
@@ -47,9 +47,10 @@
             
             ';
 
+
             if(isset($_POST['enviar']) && empty($_POST['num'])){
 
-                echo '<span style="color">Debes introducir un número</span>';
+                echo '<span style="color: red;">Debes introducir un número</span>';
 
             } 
 
