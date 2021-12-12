@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
     
@@ -14,8 +15,10 @@
         programas de la relación anterior. La aplicación no nos dejará continuar hasta que iniciemos sesión
         con un nombre de usuario y contraseña correctos.*/
 
+        //Variable de inicio de sesión
         const user = array('usuario' => 'Neiroh', 'password' => '123456');
 
+        //Mostramos el formularo inicial
         if(!isset($_POST['userEntra']) && !isset($_POST['passEntra'])){
 
             echo '
@@ -45,6 +48,7 @@
             $userEntra = $_POST['userEntra'];
             $passEntra = $_POST['passEntra'];
 
+            //Comprobamos que los datos introducidos coinciden con el usuario
             if($userEntra == user['usuario']){
 
                 if($passEntra == user['password']){
@@ -77,6 +81,7 @@
 
                     }
 
+                //En caso de no hacerlo, mostramos un error y seguimos mostrando el formulario
                 }else{
 
                     echo '

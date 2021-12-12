@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Sesiones</title>
+    <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
     
@@ -18,6 +19,8 @@
         teclado. A priori, el programa no sabe cuántos números se introducirán. El usuario indicará que ha
         terminado de introducir los datos cuando meta un número negativo. Utiliza sesiones.*/
 
+        //Comprobamos que la sesión esté iniciada,
+        //en caso de que no lo esté, la iniciamos nosotros
         if(session_id() == ""){
             session_start();
 
@@ -30,11 +33,13 @@
             }
         }
 
+        //Seteamos la variable num
         if(!isset($_POST['num'])){
             $num = 0;
         }else{
             $num = $_POST['num'];
 
+            //Comprobamos que total esté setado, num sea mayor que cero y sea un número
             if(isset($_SESSION['total']) && $num >= 0 && is_numeric($num)){
 
                 $_SESSION['total'] += $num;
@@ -42,6 +47,7 @@
     
             }
 
+            //Mostramos la media
             if($num == -1){
 
                 echo 'La media es de ' . $_SESSION['total']/$_SESSION['cant'] . '<br>';
@@ -55,6 +61,7 @@
 
     <form action="#" method="post">
     
+    <p>
         <label for="num">Número</label>
         <input type="number" name="num" autofocus>
         
@@ -65,6 +72,7 @@
 
                 }
             ?>
+    </p>
         <p>
             <input type="submit" name="enviar" value="Enviar">
             

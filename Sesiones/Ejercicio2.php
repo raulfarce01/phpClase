@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sesiones 2</title>
+    <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
     
@@ -18,10 +19,12 @@
         número negativo sólo se utiliza para indicar el final de la introducción de datos pero no se incluye
         en el cómputo. Utiliza sesiones.*/
 
+        //Iniciamos la sesión en caso de que no lo esté
         if(session_id() == ""){
             session_start();
         }
 
+        //Establecemos las variables que vamos a utilizar
         if(!isset($_SESSION['cuentaImpar']) || !isset($_SESSION['impares']) || !isset($_SESSION['mayorPar'])){
 
             $_SESSION['impares'] = 0;
@@ -29,6 +32,7 @@
             $_SESSION['mayorPar'] = 0;
             $media = 0;
 
+            //Mostramos el formulario inicial
             echo '
 
             <h2>Inserta un número</h2>
@@ -48,6 +52,7 @@
             ';
 
 
+            //Error si no se ha introducido un número
             if(isset($_POST['enviar']) && empty($_POST['num'])){
 
                 echo '<span style="color: red;">Debes introducir un número</span>';
@@ -64,8 +69,10 @@
 
                     if($num%2 == 0){
 
+                        //Comprobamos que el número sea par y mayor que los anteriores introducidos
                         if($num > $_SESSION['mayorPar']){
     
+                            //Asignamos ese valor a una variable auxiliar
                             $_SESSION['mayorPar'] = $num;
     
                         }
@@ -73,6 +80,7 @@
     
                     }else{
     
+                        //Los impares los acumulamos para calcular la media
                         $_SESSION['impares'] += $num;
                         $_SESSION['cuentaImpar']++;
     
@@ -80,6 +88,7 @@
 
                 }else{
 
+                    //Mostramos el resultado si el número introducido es negativo
                     echo 'El número mayor de los pares es: ' . $_SESSION['mayorPar'] . '<br>';
 
                     $media = $_SESSION['impares']/$_SESSION['cuentaImpar'];
