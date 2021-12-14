@@ -7,14 +7,14 @@ class Vehiculo{
 
     public function __construct($color, $peso){
        
-        $this->$color = $color;
-        $this->$peso = $peso;
+        $this->color = $color;
+        $this->peso = $peso;
 
     }
 
     public function circula($objeto){
 
-        echo "<p>Circulando " . gettype($objeto) . "</p>";
+        echo "<p>Circulando " . get_class($objeto) . "</p>";
 
     }
 
@@ -26,25 +26,25 @@ class Vehiculo{
 
     public function setColor($color){
 
-        $this->$color = $color;
+        $this->color = $color;
 
     }
 
     public function getColor(){
 
-        return self::$color;
+        return $this->color;
 
     }
 
     public function setPeso($peso){
 
-        $this->$peso = $peso;
+        $this->peso = $peso;
 
     }
 
     function getPeso(){
 
-        return self::$peso;
+        return $this->peso;
 
     }
 

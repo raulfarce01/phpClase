@@ -6,9 +6,8 @@ class CuatroRuedas extends Vehiculo{
 
     public function __construct($color, $peso, $numPuertas){
         
-        parent::setColor($color);
-        parent::setPeso($peso);
-        $this->$numPuertas = $numPuertas;
+        parent::__construct($color, $peso);
+        $this->numPuertas = $numPuertas;
 
     }
 
@@ -22,37 +21,13 @@ class CuatroRuedas extends Vehiculo{
 
     public function getNumPuertas(){
 
-        return self::$numPuertas;
+        return $this->numPuertas;
 
     }
 
     public function setNumPuertas($numPuertas){
 
-        $this->$numPuertas = $numPuertas;
-
-    }
-
-    public function setColor($color){
-
-        parent::setColor($color);
-
-    }
-
-    public function getColor(){
-
-        parent::getColor();
-
-    }
-
-    public function setPeso($peso){
-
-        parent::setPeso($peso);
-
-    }
-
-    function getPeso(){
-
-        parent::getPeso();
+        $this->numPuertas = $numPuertas;
 
     }
 

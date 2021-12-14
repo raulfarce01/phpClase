@@ -6,10 +6,8 @@ class Camion extends CuatroRuedas{
 
     public function __construct($color, $peso, $numPuertas, $longitud){
 
-        $this->$longitud = $longitud;
-        parent::setNumPuertas($numPuertas);
-        parent::setColor($color);
-        parent::setPeso($peso);
+        $this->longitud = $longitud;
+        parent::__construct($color, $peso, $numPuertas);
         
     }
 
@@ -21,37 +19,13 @@ class Camion extends CuatroRuedas{
 
     public function getLongitud(){
 
-        return self::$longitud;
+        return $this->longitud;
 
     }
 
     public function setLongitud($longitud){
 
-        $this.$longitud = $longitud;
-
-    }
-
-    public function setColor($color){
-
-        parent::setColor($color);
-
-    }
-
-    public function getColor(){
-
-        parent::getColor();
-
-    }
-
-    public function setPeso($peso){
-
-        parent::setPeso($peso);
-
-    }
-
-    function getPeso(){
-
-        parent::getPeso();
+        $this->longitud = $longitud;
 
     }
 

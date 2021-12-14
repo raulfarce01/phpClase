@@ -23,13 +23,13 @@
         $camion1 = new Camion("Verde", 200, 2, 20);
         $moto1 = new DosRuedas("Rosa", 30, 70);
 
-        var_dump($coche1);
+        /*var_dump($coche1);
         echo '<br>';
         var_dump($camion1);
         echo '<br>';
-        var_dump($moto1);
+        var_dump($moto1);*/
 
-        /*$coche1->añadirCadenasNieve(2);
+        $coche1->añadirCadenasNieve(2);
         $coche1->quitarCadenasNieve(4);
         $coche1->repintar("Azul");
         $coche1->circula($coche1);
@@ -42,7 +42,7 @@
 
         $moto1->ponerGasolina(2);
         $moto1->circula($moto1);
-        $moto1->añadirPersona(120);*/
+        $moto1->añadirPersona(120);
         
 
     ?>

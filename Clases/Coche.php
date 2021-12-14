@@ -6,10 +6,8 @@ class Coche extends CuatroRuedas{
 
     public function __construct($color, $peso, $numPuertas, $numCadenasNieve){
 
-        $this->$numCadenasNieve = $numCadenasNieve;
-        parent::setColor($color);
-        parent::setPeso($peso);
-        parent::setNumPuertas($numPuertas);
+        $this->numCadenasNieve = $numCadenasNieve;
+        parent::__construct($color, $peso, $numPuertas);
         
     }
 
@@ -17,9 +15,9 @@ class Coche extends CuatroRuedas{
 
         echo "<p>$num cadenas de nieve añadidas.<br>";
 
-        self::$numCadenasNieve += $num;
+        $this->numCadenasNieve += $num;
 
-        echo "Ahora tienes " . self::$numCadenasNieve . ".</p>";
+        echo "Ahora tienes " . $this->numCadenasNieve . ".</p>";
 
     }
 
@@ -29,8 +27,8 @@ class Coche extends CuatroRuedas{
         //if($num <= $this->Coche::$numCadenasNieve){
 
             echo "<p>$num cadenas de nieve quitadas.<br>";
-            $this->Coche::$numCadenasNieve -= $num;
-            echo "Ahora tienes " . self::$numCadenasNieve . ".</p>";
+            $this->numCadenasNieve -= $num;
+            echo "Ahora tienes " . $this->numCadenasNieve . ".</p>";
 
         //}else{
 
@@ -44,37 +42,13 @@ class Coche extends CuatroRuedas{
 
     public function getCadenasNieve(){
 
-        return self::$numCadenasNieve;
+        return $this->numCadenasNieve;
 
     }
 
     public function setCadenasNieve($numCadenasNieve){
 
-        $this.$numCadenasNieve = $numCadenasNieve;
-
-    }
-
-    public function setColor($color){
-
-        parent::setColor($color);
-
-    }
-
-    public function getColor(){
-
-        parent::getColor();
-
-    }
-
-    public function setPeso($peso){
-
-        parent::setPeso($peso);
-
-    }
-
-    function getPeso(){
-
-        parent::getPeso();
+        $this->numCadenasNieve = $numCadenasNieve;
 
     }
 
