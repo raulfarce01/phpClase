@@ -13,7 +13,11 @@ class Camion extends CuatroRuedas{
 
     public function añadirRemolque($longRemolque){
 
-        echo "<p> Remolque Añadido <br>";
+        echo "<p> Remolque Añadido de $longRemolque<br>";
+
+        $this->longitud += $longRemolque;
+
+        echo "Ahora el vehículo mide $this->longitud</p>";
 
     }
 

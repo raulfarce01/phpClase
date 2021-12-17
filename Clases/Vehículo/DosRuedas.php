@@ -7,7 +7,8 @@ class DosRuedas extends Vehiculo{
     public function __construct($color, $peso, $cilindrada){
 
         $this->cilindrada = $cilindrada;
-        parent::__construct($color, $peso);
+        $this->color = $color;
+        $this->peso = $peso;
         
     }
 
@@ -15,6 +16,20 @@ class DosRuedas extends Vehiculo{
 
         echo "<p>Añadiendo gasolina...<br>";
         echo "Añadidos $litros litros de gasolina.</p>";
+
+        $this->peso += $litros;
+
+        echo "Ahora el vehículo pesa $this->peso";
+
+    }
+
+    public function añadirPersona($pesoPersona){
+
+        echo "<p>Añadida una persona de $pesoPersona kg</p>";
+
+        $this->peso += $pesoPersona + 2;
+
+        echo "<p>Ahora el vehículo pesa $this->peso</p>";
 
     }
 

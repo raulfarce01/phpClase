@@ -40,6 +40,17 @@ class Coche extends CuatroRuedas{
 
     }
 
+    public function añadirPersona($pesoPersona){
+
+        parent::añadirPersona($pesoPersona);
+
+        if($this->peso >= 1500 && $this->numCadenasNieve <= 3){
+            echo "<p>ATENCIÓN!!! Ponga 4 cadenas para la nieve</p>";
+        }
+
+        
+    }
+
     public function getCadenasNieve(){
 
         return $this->numCadenasNieve;
@@ -50,6 +61,19 @@ class Coche extends CuatroRuedas{
 
         $this->numCadenasNieve = $numCadenasNieve;
 
+    }
+
+    public function setPeso($peso){
+
+        if($this->peso > 2100){
+
+            echo "<p>El peso no puede superar 2100kg</p>";
+
+        }else{
+
+            $this->setPeso($peso);
+
+        }
     }
 
     public function __destruct(){

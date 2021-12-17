@@ -1,20 +1,20 @@
 <?php
 
-class Vehiculo{
+abstract class Vehiculo{
 
     private $color;
     private $peso;
+    private static $numCambioColor = 0;    
 
-    public function __construct($color, $peso){
-       
-        $this->color = $color;
-        $this->peso = $peso;
+    public function circula(){
+
+        echo "<p>Circulando " . get_class($this) . "</p>";
 
     }
+    
+    public static function verAtributo($objeto){
 
-    public function circula($objeto){
-
-        echo "<p>Circulando " . get_class($objeto) . "</p>";
+        var_dump($objeto);
 
     }
 
@@ -22,11 +22,30 @@ class Vehiculo{
 
         echo "<p>Añadida una persona de $pesoPersona kg</p>";
 
+        $this->peso += $pesoPersona;
+
+        echo "<p>Ahora el vehículo pesa $this->peso</p>";
+
     }
 
     public function setColor($color){
 
         $this->color = $color;
+        self::$numCambioColor++;
+
+    }
+
+    public function getNumCambioColor(){
+
+        return self::$numCambioColor;
+
+    }
+
+    public function repintar($color){
+
+        $this->setColor($color);
+
+        echo "<p>Color pintado a $this->color</p>";
 
     }
 

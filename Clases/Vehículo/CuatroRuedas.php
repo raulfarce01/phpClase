@@ -6,17 +6,20 @@ class CuatroRuedas extends Vehiculo{
 
     public function __construct($color, $peso, $numPuertas){
         
-        parent::__construct($color, $peso);
+        $this->color = $color;
+        $this->peso = $peso;
         $this->numPuertas = $numPuertas;
 
     }
 
-    public function repintar($color){
+    public function añadirPersona($pesoPersona){
 
-        parent::setColor($color);
+        echo "<p>Añadida una persona de $pesoPersona kg</p>";
 
-        echo "Color pintado a $color";
+        $this->peso += $pesoPersona;
 
+        echo "<p>Ahora el vehículo pesa $this->peso</p>";
+        
     }
 
     public function getNumPuertas(){
