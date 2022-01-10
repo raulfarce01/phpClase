@@ -38,14 +38,14 @@
         echo $fact1;
         echo $fact2;
 
-        $racNormal = new Racional("8/4");
+        $racNormal = new Racional("8 / 4");
 
         echo $racNormal;
 
         $racComp1 = new RacionalCompleto();
         $racComp2 = new RacionalCompleto(4);
         $racComp3 = new RacionalCompleto(4, 3);
-        $racComp4 = new RacionalCompleto("7/6");
+        $racComp4 = new RacionalCompleto("7 / 6");
 
         echo $racComp1;
         echo $racComp2;
