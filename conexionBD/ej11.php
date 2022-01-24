@@ -11,15 +11,13 @@
     <h1>Ejercicio 11</h1>
     
     <?php
+
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+
         $valorLista = 1;
 
-        $dwes = new mysqli('localhost', 'mismuertos', 'aa', 'dwes');
-
-        $consulta = $dwes->query('SELECT p.nombre_corto, t.nombre, s.unidades FROM producto p INNER JOIN stock s ON s.producto = p.cod INNER JOIN tienda t ON t.cod = s.tienda;');
-
-        $lista = $consulta->fetch_object();
-
-        
+        $dwes = new mysqli('localhost', 'mismuertos', 'aa', 'dwes');        
 
     ?>
 
@@ -28,6 +26,10 @@
         <select name="lista1">
 
             <?php
+
+                $consulta = $dwes->query('SELECT p.nombre_corto, t.nombre, s.unidades, p.cod FROM producto p INNER JOIN stock s ON s.producto = p.cod INNER JOIN tienda t ON t.cod = s.tienda;');
+
+                $lista = $consulta->fetch_object();
 
                 while($lista != null){
 
@@ -39,29 +41,34 @@
             ?>
 
         </select>
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" name="enviar">
 
     </form>
 
     <?php 
+
+    if(isset($_POST['enviar'])){
+        $lista1 = $_POST['lista1'];
     
-        if(isset($_POST['Enviar'])){
 
-            $lista = $consulta->fetch_object();
+        $consulta2 = $dwes->query("SELECT p.nombre_corto, t.nombre, s.unidades, p.cod FROM producto p INNER JOIN stock s ON s.producto = p.cod INNER JOIN tienda t ON t.cod = s.tienda WHERE p.cod = '$lista1';");
+        $lista2 = $consulta2->fetch_object();
 
-            while($lista != null){
+        while($lista2 != null){
 
-                if($lista->cod == $lista1){
 
-                    echo "$lista->nombre_corto se encuentra en la tienda $lista->nombre con un stock de $lista->unidades";
+           /* if($lista2->cod == $lista1){*/
 
-                }
-                $lista = $consulta->fetch_object();
-
-            }
+                echo "<p>$lista2->nombre_corto se encuentra en la tienda $lista2->nombre con un stock de $lista2->unidades</p>";
+            
+    
+           /* }*/
+            $lista2 = $consulta2->fetch_object();
 
         }
-
+        
+    }
+        $dwes->close();
     ?>
 
 </body>
