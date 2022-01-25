@@ -16,28 +16,48 @@ class Conexion{
 
     }
 
-    public function createSelect($tabla, $campos, $cond = "", $idCond = ""){
+    public function createSelectSimple($tabla, $campos, $cond = "", $valor = ""){
 
         //SELECT campos FROM tabla WHERE codigo = valor
 
         $camposDepurados = implode(", ", $campos);
 
-        if($cond == "" || $idCond == ""){
+        if($cond == "" || $valor == ""){
 
-            $this->db->query("SELECT $camposDepurados FROM $tabla");
+            if($cond == "" && $valor = ""){
+
+                $this->db->query("SELECT $camposDepurados FROM $tabla");
+
+            }else if($cond == "" && $valor != ""){
+
+                echo '<p>!!!No has insertado el valor de la condición del elemento que quiere cambiar en la tabla!!!</p>';
+
+            }else if($cond != "" && $valor == ""){
+
+                echo '<p>!!!No has insertado el parámetro de la condición cuyo elemento quieres cambiar!!!</p>';
+
+            }
 
         }else{
 
             if(is_nan($cond)){
 
-            $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $idCond = '$cond'");
+            $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = '$valor'");
 
             }else{
 
-                $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $idCond = $cond");
+                $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = $valor");
             }
 
         }
+
+    }
+
+    public function createSelectJoin($tablas, $campos, $cond = "", $valor = ""){
+
+        //SELECT campos FROM tabla1 t1 INNER JOIN tabla2 t2
+
+        
 
     }
 
@@ -75,19 +95,29 @@ class Conexion{
 
             if(is_nan($valor)){
 
-                for($i = 0; $i < count($campos); $i++){
-                    
-                    
-
-                }
+                $this->db->query("UPDATE $tabla SET $this->separaCampos($campos, $valorUpdate) WHERE $cond = '$valor'");
 
             }else{
 
-
+                $this->db->query("UPDATE $tabla SET $this->separaCampos($campos, $valorUpdate) WHERE $cond = $valor");
 
             }
 
         }
+    }
+
+    public function separaCampos($campos, $valores){
+
+        $cadena = "";
+
+        for($i = 0; $i < count($campos); $i++){
+
+            $cadena .= $campos[$i] . ' = ' . $valores[$i];
+
+        }
+
+        return $cadena;
+
     }
 
 }
