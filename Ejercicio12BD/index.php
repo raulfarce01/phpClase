@@ -28,6 +28,8 @@
 
     $dwes->updateData('stock', 'producto', '3DSNG', 'unidades', 4);
 
+    $dwes->closeConex();
+
     ?>
 
 </body>

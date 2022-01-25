@@ -19,13 +19,15 @@ class Conexion{
     //
     //Función para conectarnos a una base de datos
     public function __construct($dbUser, $dbPasswd, $dbName, $dir = 'localhost'){
-        
+
+        //Creamos una conexión a la base de datos con el objeto mysqli
         $this->db = new mysqli($dir, $dbUser, $dbPasswd, $dbName);
 
     }
 
     public function closeConex(){
 
+        //Cerramos la conexión con la base de datos
         $this->db->close();
 
     }
@@ -43,6 +45,7 @@ class Conexion{
 
         $camposDepurados = implode(", ", $campos);
 
+        //Comprobamos que los valores no estén vacíos, en caso de estarlos, realizamos la consulta más simple
         if($cond == "" || $valor == ""){
 
             if($cond == "" && $valor = ""){
@@ -80,6 +83,7 @@ class Conexion{
 
             if(is_nan($valor)){
 
+                //Comprobamos que el valor insertado sea o no un número para solucionar un posible problema con las comillas
                 $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = '$valor'");
                 $mostrador = $consulta->fetch_object();
 
@@ -102,9 +106,11 @@ class Conexion{
 
             }else{
 
+                //Almacenamos la consulta en una variable
                 $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = $valor");
                 $mostrador = $consulta->fetch_object();
 
+                //Recorremos los resultados de la consulta y los mostramos
                 while($mostrador != NULL){
 
                     echo "<p>";
@@ -135,6 +141,7 @@ class Conexion{
 
         //INSERT INTO tabla VALUES (valor1, valor2, ...)
 
+        //Cambiamos el formato de array a una cadena de caracteres separados por comas que cuyos caracteres son los valores del array para poder realizar la operación en la base de datos
         $valoresDepurados = implode(", ", $valores);
 
         $this->db->query("INSERT INTO $tabla VALUES ($valoresDepurados)");
@@ -151,6 +158,7 @@ class Conexion{
 
         //DELETE FROM tabla WHERE condicion = valor
 
+        //Comprobamos que el valor insertado sea o no un número para evitar posibles problemas con las comillas
         if(is_nan($valor)){
 
             $this->db->query("DELETE FROM $tabla WHERE $cond = '$valor'");
@@ -176,16 +184,20 @@ class Conexion{
 
         //UPDATE tabla SET campo1 = valor1, $campo2 = valor2, ... WHERE cond = valor
 
+        //Nos aseguramos de que el número de valores introducidos sea el mismo para no generar ningún tipo de error
         if(count($campos) == count($valorUpdate)){
 
+            //Los números y las comillas otra vez
             if(is_nan($valor)){
 
+                //@see function separaCampos
                 $this->db->query("UPDATE $tabla SET $this->separaCampos($campos, $valorUpdate) WHERE $cond = '$valor'");
 
                 echo "<p>Valor: $this->separaCampos($campos, $valorUpdate) actualizados correctamente</p>";
 
             }else{
 
+                //@see function separaCampos
                 $this->db->query("UPDATE $tabla SET $this->separaCampos($campos, $valorUpdate) WHERE $cond = $valor");
 
                 echo "<p>Valor: $this->separaCampos($campos, $valorUpdate) actualizados correctamente</p>";
@@ -208,8 +220,10 @@ class Conexion{
 
         $cadena = "";
 
+        //Comprobamos que sea un array para no romper el programa al insertar una simple cadena de texto
         if(is_array($campos)){
             
+            //Al ser array cambiamos el formato de los arrays a CAMPO1 = VALOR1, CAMPO2 = VALOR2
             for($i = 0; $i < count($campos); $i++){
 
                 if($i = count($campos) - 1){
