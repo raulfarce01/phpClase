@@ -37,7 +37,7 @@ class Conexion{
     //@param $valor es un String o Entero que almacena el valor de la condición de la consulta
     //
     //Función para realizar consultas a una sola tabla
-    public function createSelectSimple($tabla, $campos, $cond = "", $valor = ""){
+    public function createSelectSimple($tabla, $campos, $cond = "", $valor = NULL){
 
         //SELECT campos FROM tabla WHERE codigo = valor
 
@@ -61,7 +61,7 @@ class Conexion{
 
         }else{
 
-            if(is_nan($cond)){
+            if(is_nan($valor)){
 
             $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = '$valor'");
 
