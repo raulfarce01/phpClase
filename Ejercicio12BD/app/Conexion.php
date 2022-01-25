@@ -47,7 +47,24 @@ class Conexion{
 
             if($cond == "" && $valor = ""){
 
-                $this->db->query("SELECT $camposDepurados FROM $tabla");
+                $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla");
+                $mostrador = $consulta->fetch_object();
+
+                while($mostrador != NULL){
+
+                    echo "<p>";
+
+                    for($i = 0; $i < count($campos); $i++){
+
+                        echo "$campos[$i], ";
+
+                    }
+
+                    echo "</p>";
+
+                    $mostrador = $consulta->fetch_object();
+
+                }
 
             }else if($cond == "" && $valor != ""){
 
@@ -63,11 +80,46 @@ class Conexion{
 
             if(is_nan($valor)){
 
-            $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = '$valor'");
+                $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = '$valor'");
+                $mostrador = $consulta->fetch_object();
+
+                while($mostrador != NULL){
+
+                    echo "<p>";
+
+                    for($i = 0; $i < count($campos); $i++){
+
+                        echo "$campos[$i], ";
+
+                    }
+
+                    echo "</p>";
+
+                    $mostrador = $consulta->fetch_object();
+
+                }
+                
 
             }else{
 
-                $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = $valor");
+                $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = $valor");
+                $mostrador = $consulta->fetch_object();
+
+                while($mostrador != NULL){
+
+                    echo "<p>";
+
+                    for($i = 0; $i < count($campos); $i++){
+
+                        echo "$campos[$i], ";
+
+                    }
+
+                    echo "</p>";
+
+                    $mostrador = $consulta->fetch_object();
+
+                }
             }
 
         }
@@ -87,8 +139,11 @@ class Conexion{
 
         $this->db->query("INSERT INTO $tabla VALUES ($valoresDepurados)");
 
+        echo "<p>Valores: $valoresDepurados insertados correctamente en la tabla $tabla</p>";
+
     }
 
+    //
     //@see function createSelectSimple
     //
     //Función para borrar registros de una tabla
@@ -100,9 +155,13 @@ class Conexion{
 
             $this->db->query("DELETE FROM $tabla WHERE $cond = '$valor'");
 
+            echo "<p>Registro $valor eliminado correctamente de la tabla</p>";
+
         }else{
 
             $this->db->query("DELETE FROM $tabla WHERE $cond = $valor");
+
+            echo "<p>Registro $valor eliminado correctamente de la tabla</p>";
 
         }
 
@@ -117,17 +176,25 @@ class Conexion{
 
         //UPDATE tabla SET campo1 = valor1, $campo2 = valor2, ... WHERE cond = valor
 
-        if(count($campos) != count($valorUpdate)){
+        if(count($campos) == count($valorUpdate)){
 
             if(is_nan($valor)){
 
                 $this->db->query("UPDATE $tabla SET $this->separaCampos($campos, $valorUpdate) WHERE $cond = '$valor'");
 
+                echo "<p>Valor: $this->separaCampos($campos, $valorUpdate) actualizados correctamente</p>";
+
             }else{
 
                 $this->db->query("UPDATE $tabla SET $this->separaCampos($campos, $valorUpdate) WHERE $cond = $valor");
 
+                echo "<p>Valor: $this->separaCampos($campos, $valorUpdate) actualizados correctamente</p>";
+
             }
+
+        }else{
+
+            echo "<p>La cantidad de campos y de valores no coincide</p>";
 
         }
     }
@@ -141,9 +208,25 @@ class Conexion{
 
         $cadena = "";
 
-        for($i = 0; $i < count($campos); $i++){
+        if(is_array($campos)){
+            
+            for($i = 0; $i < count($campos); $i++){
 
-            $cadena .= $campos[$i] . ' = ' . $valores[$i] . ', ';
+                if($i = count($campos) - 1){
+
+                    $cadena .= $campos[$i] . ' = ' . $valores[$i];
+
+                }else{
+
+                    $cadena .= $campos[$i] . ' = ' . $valores[$i] . ', ';
+
+                }
+
+            }
+
+        }else{
+
+            $cadena .= $campos . ' = ' . $valores;
 
         }
 
