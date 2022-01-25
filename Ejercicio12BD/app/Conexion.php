@@ -2,8 +2,16 @@
 
 class Conexion{
 
+    //Esta variable la vamos a utilizar para realizar los querys a la base de datos
     private $db;
 
+    //
+    //@param $bdUser contiene un String con el usuario
+    //@param $bdPasswd contiene un String con la contraseña del usuario con el que accederemos a la base de datos
+    //@param $bdName contiene un String con el nombre de la base de datos
+    //@param $dir contiene un string con la dirección ip en la que se encuentra la base de datos
+    //
+    //Función para conectarnos a una base de datos
     public function openConex($bdUser, $bdPasswd, $bdName, $dir = 'localhost'){
 
         $this->db = new mysqli($dir, $bdUser, $bdPasswd, $bdName);
@@ -16,6 +24,13 @@ class Conexion{
 
     }
 
+    //
+    //@param $tabla contiene un String donde almacenamos la tabla en la que queremos hacer el select
+    //@param $campos contiene un Arrray donde se guardan los campos que queremos mostrar en la consulta
+    //@param $cond es un String que contiene la condición que queremos aplicar al select
+    //@param $valor es un String o Entero que almacena el valor de la condición de la consulta
+    //
+    //Función para realizar consultas a una sola tabla
     public function createSelectSimple($tabla, $campos, $cond = "", $valor = ""){
 
         //SELECT campos FROM tabla WHERE codigo = valor
@@ -61,6 +76,11 @@ class Conexion{
 
     }
 
+    //
+    //@param $tabla almacena un String con el nombre de la tabla a la que queremos insertar datos
+    //@param $valores almacena un Array con los valores que queremos insertar en la tabla
+    //
+    //Función para introducir datos en la tabla
     public function insertData($tabla, $valores){
 
         //INSERT INTO tabla VALUES (valor1, valor2, ...)
@@ -71,6 +91,12 @@ class Conexion{
 
     }
 
+    //
+    //@param
+    //
+    //
+    //
+    //
     public function deleteData($tabla, $cond, $valor){
 
         //DELETE FROM tabla WHERE condicion = valor
