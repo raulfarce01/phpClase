@@ -5,6 +5,12 @@ class Conexion{
     //Esta variable la vamos a utilizar para realizar los querys a la base de datos
     private $db;
 
+    /*public function openConex($dbUser, $dbPasswd, $dbName, $dir = 'localhost'){
+
+        $this->db = new mysqli($dir, $dbUser, $dbPasswd, $dbName);
+
+    }*/
+
     //
     //@param $bdUser contiene un String con el usuario
     //@param $bdPasswd contiene un String con la contraseña del usuario con el que accederemos a la base de datos
@@ -12,9 +18,9 @@ class Conexion{
     //@param $dir contiene un string con la dirección ip en la que se encuentra la base de datos
     //
     //Función para conectarnos a una base de datos
-    public function openConex($bdUser, $bdPasswd, $bdName, $dir = 'localhost'){
-
-        $this->db = new mysqli($dir, $bdUser, $bdPasswd, $bdName);
+    public function __construct($dbUser, $dbPasswd, $dbName, $dir = 'localhost'){
+        
+        $this->db = new mysqli($dir, $dbUser, $dbPasswd, $dbName);
 
     }
 
@@ -68,14 +74,6 @@ class Conexion{
 
     }
 
-    public function createSelectJoin($tablas, $campos, $cond = "", $valor = ""){
-
-        //SELECT campos FROM tabla1 t1 INNER JOIN tabla2 t2
-
-        
-
-    }
-
     //
     //@param $tabla almacena un String con el nombre de la tabla a la que queremos insertar datos
     //@param $valores almacena un Array con los valores que queremos insertar en la tabla
@@ -91,12 +89,9 @@ class Conexion{
 
     }
 
+    //@see function createSelectSimple
     //
-    //@param
-    //
-    //
-    //
-    //
+    //Función para borrar registros de una tabla
     public function deleteData($tabla, $cond, $valor){
 
         //DELETE FROM tabla WHERE condicion = valor
@@ -113,6 +108,11 @@ class Conexion{
 
     }
 
+    //
+    //@see function createSelectSimple
+    //@param $valorUpdate es un Array que almacena el valor de los campos a modificar
+    //
+    //Función para hacer UPDATEs de tablas
     public function updateData($tabla, $cond, $valor, $campos, $valorUpdate){
 
         //UPDATE tabla SET campo1 = valor1, $campo2 = valor2, ... WHERE cond = valor
@@ -132,13 +132,18 @@ class Conexion{
         }
     }
 
+    //
+    //@param $campos contiene un Array con los campos a modificar
+    //@param $valores contiene un Array con los valores de los campos
+    //
+    //Función para convertir 2 Arrays en una cadena de texto con formato "campo1 = valor1, campo2 = valor2, ..."
     public function separaCampos($campos, $valores){
 
         $cadena = "";
 
         for($i = 0; $i < count($campos); $i++){
 
-            $cadena .= $campos[$i] . ' = ' . $valores[$i];
+            $cadena .= $campos[$i] . ' = ' . $valores[$i] . ', ';
 
         }
 
