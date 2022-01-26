@@ -30,6 +30,8 @@ class Conexion{
         //Cerramos la conexión con la base de datos
         $this->db->close();
 
+        echo '<p>Base de datos cerrada correctamente</p>';
+
     }
 
     //
@@ -43,23 +45,32 @@ class Conexion{
 
         //SELECT campos FROM tabla WHERE codigo = valor
 
-        $camposDepurados = implode(", ", $campos);
+        if(is_array($campos)){
+
+            $camposDepurados = implode(", ", $campos);
+
+        }else{
+
+            $camposDepurados = $campos;
+
+        }
+        //echo '<br>'. $valor;
+
 
         //Comprobamos que los valores no estén vacíos, en caso de estarlos, realizamos la consulta más simple
         if($cond == "" || $valor == ""){
 
-            if($cond == "" && $valor = ""){
+            if($cond == "" && $valor == ""){
 
                 $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla");
-                $mostrador = $consulta->fetch_object();
-
-                while($mostrador != NULL){
+                
+                while($mostrador = $consulta->fetch_object()){
 
                     echo "<p>";
 
                     for($i = 0; $i < count($campos); $i++){
 
-                        echo "$campos[$i], ";
+                        echo $mostrador->$campos[$i] . ', ';
 
                     }
 
@@ -81,7 +92,7 @@ class Conexion{
 
         }else{
 
-            if(is_nan($valor)){
+            if(is_string($valor)){
 
                 //Comprobamos que el valor insertado sea o no un número para solucionar un posible problema con las comillas
                 $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = '$valor'");
@@ -159,7 +170,7 @@ class Conexion{
         //DELETE FROM tabla WHERE condicion = valor
 
         //Comprobamos que el valor insertado sea o no un número para evitar posibles problemas con las comillas
-        if(is_nan($valor)){
+        if(is_string($valor)){
 
             $this->db->query("DELETE FROM $tabla WHERE $cond = '$valor'");
 
@@ -185,22 +196,35 @@ class Conexion{
         //UPDATE tabla SET campo1 = valor1, $campo2 = valor2, ... WHERE cond = valor
 
         //Nos aseguramos de que el número de valores introducidos sea el mismo para no generar ningún tipo de error
-        if(count($campos) == count($valorUpdate)){
+
+        if(!is_array($campos)){
+
+            $camposArray = array($campos);
+
+        }
+
+        if(!is_array($valorUpdate)){
+
+            $valorUpdateArray = array($valorUpdate);
+
+        }
+
+        if(count($camposArray) == count($valorUpdateArray)){
 
             //Los números y las comillas otra vez
-            if(is_nan($valor)){
+            if(is_string($valor)){
 
                 //@see function separaCampos
-                $this->db->query("UPDATE $tabla SET $this->separaCampos($campos, $valorUpdate) WHERE $cond = '$valor'");
+                $this->db->query('UPDATE ' . $tabla . ' SET ' . $this->db->separaCampos($camposArray, $valorUpdateArray) . ' WHERE ' . $cond . ' = ' . $valor);
 
-                echo "<p>Valor: $this->separaCampos($campos, $valorUpdate) actualizados correctamente</p>";
+                echo "<p>Valor: $this->db->separaCampos($camposArray, $valorUpdateArray) actualizados correctamente</p>";
 
             }else{
 
                 //@see function separaCampos
-                $this->db->query("UPDATE $tabla SET $this->separaCampos($campos, $valorUpdate) WHERE $cond = $valor");
+                $this->db->query("UPDATE $tabla SET $this->db->separaCampos($camposArray, $valorUpdateArray) WHERE $cond = $valor");
 
-                echo "<p>Valor: $this->separaCampos($campos, $valorUpdate) actualizados correctamente</p>";
+                echo "<p>Valor: $this->db->separaCampos($camposArray, $valorUpdateArray) actualizados correctamente</p>";
 
             }
 
