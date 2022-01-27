@@ -17,9 +17,9 @@
 
 		$dwes = new mysqli('localhost', 'dwes', 'abc123', 'dwes');   
         $consulta = $dwes->stmt_init(); 
-        $consulta->prepare('SELECT p.nombre_corto FROM producto p;');    
+        $consulta->prepare('SELECT p.nombre_corto, p.cod FROM producto p;');    
         $consulta->execute();
-        $consulta->bind_result($nombreProd);
+        $consulta->bind_result($nombreProd, $codProd);
 
 
         //SELECT p.nombre_corto, t.nombre, s.unidades, p.cod FROM producto p INNER JOIN stock s ON s.producto = p.cod INNER JOIN tienda t ON t.cod = s.tienda;
@@ -28,16 +28,6 @@
 
 <div id="encabezado">
 	<h1>Ejercicio: </h1>
-
-    <?php
-
-        while($consulta->fetch()){
-
-            echo "<p>$nombreProd</p>";
-
-        }
-
-    ?>
     
 	<form action="#" method="post">
 
@@ -47,7 +37,7 @@
 
                 while($consulta->fetch()){
 
-                    echo "<option>$nombreProd</option>";
+                    echo "<option value='$codProd'>$nombreProd</option>";
 
                 }
 
@@ -64,11 +54,24 @@
 	<?php 
 
     if(isset($_POST['enviar'])){
+        
         $lista1 = $_POST['lista1'];
 
-            echo "<p>$lista2->nombre_corto se encuentra en la tienda $lista2->nombre con un stock de $lista2->unidades</p>";
+        //$consultaRes = $dwes->stmt_init();
+        $consulta->prepare("SELECT p.nombre_corto, t.nombre, s.unidades FROM producto p INNER JOIN stock s ON s.producto = p.cod INNER JOIN tienda t ON t.cod = s.tienda WHERE p.cod = '$lista1';
+        ");
+        $consulta->execute();
+        $consulta->bind_result($nombreProdF, $nombreTienda, $unidadesF);
+
+        while($consulta->fetch()){
+
+            echo "<p>$nombreProdF se encuentra en la tienda $nombreTienda con un stock de $unidadesF</p>";
+
+
+        }
+
+
             
-            $consulta->execute();
         }
         
         $dwes->close();
