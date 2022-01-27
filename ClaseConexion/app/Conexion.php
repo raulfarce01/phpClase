@@ -48,10 +48,12 @@ class Conexion{
         if(is_array($campos)){
 
             $camposDepurados = implode(", ", $campos);
+            $contador = count($campos);
 
         }else{
 
             $camposDepurados = $campos;
+            $contador = 1;
 
         }
         //echo '<br>'. $valor;
@@ -68,11 +70,25 @@ class Conexion{
 
                     echo "<p>";
 
-                    for($i = 0; $i < count($campos); $i++){
+                    if(is_array($campos)){
 
-                        echo $mostrador->$campos[$i] . ', ';
+                        for($i = 0; $i < $contador; $i++){
+
+                            echo $mostrador->$campos[$i] . ', ';
+    
+                        }
+
+                    }else{
+
+                        for($i = 0; $i < $contador; $i++){
+
+                            echo $mostrador->$campos . ', ';
+    
+                        }
 
                     }
+
+                    
 
                     echo "</p>";
 
@@ -102,7 +118,7 @@ class Conexion{
 
                     echo "<p>";
 
-                    for($i = 0; $i < count($campos); $i++){
+                    for($i = 0; $i < $contador; $i++){
 
                         echo "$campos[$i], ";
 
@@ -126,7 +142,7 @@ class Conexion{
 
                     echo "<p>";
 
-                    for($i = 0; $i < count($campos); $i++){
+                    for($i = 0; $i < $contador; $i++){
 
                         echo "$campos[$i], ";
 
