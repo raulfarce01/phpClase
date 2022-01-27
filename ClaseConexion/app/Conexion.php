@@ -233,7 +233,7 @@ class Conexion{
                 //@see function separaCampos
                 $this->db->query('UPDATE ' . $tabla . ' SET ' . $this->separaCampos($camposArray, $valorUpdateArray) . ' WHERE ' . $cond . ' = ' . $valor);
 
-                echo "<p>Valor: $this->separaCampos($camposArray, $valorUpdateArray) actualizados correctamente</p>";
+                echo "<p>Valor: " . $this->separaCampos($camposArray, $valorUpdateArray) . "actualizados correctamente </p>";
 
             }else{
 
@@ -256,7 +256,7 @@ class Conexion{
     //@param $valores contiene un Array con los valores de los campos
     //
     //Función para convertir 2 Arrays en una cadena de texto con formato "campo1 = valor1, campo2 = valor2, ..."
-    public static function separaCampos($campos, $valores){
+    public function separaCampos($campos, $valores){
 
         $cadena = "";
 
