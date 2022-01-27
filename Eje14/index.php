@@ -12,13 +12,18 @@
 
     <?php
 
+        //Iniciamos la conexión con la base de datos
         $dwes = new PDO('mysql:host=localhost; dbname=dwes', 'dwes', 'abc123');
 
+        //Usamos esta variable para realizar con éxito la transacción
         $ok = true;
+
+        //comenzamos la transacción para no hacer autocommit
         $dwes->beginTransaction();
 
         //$update = $dwes->exec("UPDATE stock SET unidades = 1 WHERE tienda = 1 AND producto = 'PAPYRE62GB'");
         
+        //Comprobamos que se pueda realizar el update
         if($dwes->exec("UPDATE stock SET unidades = 1 WHERE tienda = 1 AND producto = 'PAPYRE62GB';")){
 
             $filas = $dwes->exec("UPDATE stock SET unidades = 1 WHERE tienda = 1 AND producto = 'PAPYRE62GB';");

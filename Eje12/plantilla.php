@@ -15,10 +15,17 @@
 
 		$valorLista = 1;
 
+        //Iniciamos la conexión con la base de datos
 		$dwes = new mysqli('localhost', 'dwes', 'abc123', 'dwes');   
         $consulta = $dwes->stmt_init(); 
+
+        //Creamos la consulta para seleccionar el nombre y el código del producto
         $consulta->prepare('SELECT p.nombre_corto, p.cod FROM producto p;');    
+
+        //Ejecutamos la consulta
         $consulta->execute();
+
+        //Sustituimos los valores de la consulta y los asignamos a una variable
         $consulta->bind_result($nombreProd, $codProd);
 
 
@@ -35,8 +42,10 @@
 
             <?php
 
+                //Recorremos el objeto en el que se almacenan los registros de la consulta
                 while($consulta->fetch()){
 
+                    //Creamos seleccionables dentro de un botón select para dar a elegir al usuario un producto
                     echo "<option value='$codProd'>$nombreProd</option>";
 
                 }

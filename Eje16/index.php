@@ -17,6 +17,7 @@
 
         $valorLista = 1;
 
+        //Inicializamos unobjeto PDO para conectar el código a la base de datos
         $dwes = new PDO('mysql:host=localhost; dbname=dwes', 'dwes', 'abc123');        
 
     ?>
@@ -27,11 +28,10 @@
 
             <?php
 
-                $consulta = $dwes->query('SELECT p.nombre_corto, t.nombre, s.unidades, p.cod FROM producto p INNER JOIN stock s ON s.producto = p.cod INNER JOIN tienda t ON t.cod = s.tienda;');
+                //Recorremos la consulta y almacenamos los valores en el array asociativo registro
+                foreach($dwes->query("SELECT nombre_corto, cod FROM producto;") as $registro){
 
-                while($consulta = $consulta->fetch()){
-
-                    echo "<option value='" . $consulta['p.nombre_corto'] . "'>" . $consulta['p.nombre_corto'] . "</option>";
+                    echo "<option value='" . $registro['cod'] . "'>" . $registro['nombre_corto'] . "</option>";
 
                 }
 
@@ -47,18 +47,11 @@
     if(isset($_POST['enviar'])){
         $lista1 = $_POST['lista1'];
     
+        //Ejecutamos la consulta para mostrar el resultado del producto seleccionado por el usuario en el formulario
+        foreach($dwes->query("SELECT p.nombre_corto, t.nombre, s.unidades, p.cod FROM producto p INNER JOIN stock s ON s.producto = p.cod INNER JOIN tienda t ON t.cod = s.tienda WHERE p.cod = '$lista1';") as $registro){
 
-        $consulta2 = $dwes->query("SELECT p.nombre_corto, t.nombre, s.unidades, p.cod FROM producto p INNER JOIN stock s ON s.producto = p.cod INNER JOIN tienda t ON t.cod = s.tienda WHERE p.cod = '$lista1';");
-
-        while($consulta2 = $consulta2->fetch()){
-
-
-           /* if($lista2->cod == $lista1){*/
-
-                echo "<p>" . $consulta2['p.nombre_corto'] . " se encuentra en la tienda " . $consulta2['t.nombre'] . " con un stock de " . $consulta2['s.unidades'] . "</p>";
-            
-    
-           /* }*/
+            //Aquí usamos un índice numérico ya que PDO no permite el formato de 'p.nombre_corto'
+            echo "<p>Hay " . $registro[2] . " del producto: " . $registro[0] . " en la sucursal: " . $registro[1] . "</p>";
 
         }
         
