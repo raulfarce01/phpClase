@@ -19,7 +19,7 @@
 		$dwes = new PDO('mysql:host=localhost; dbname=dwes', 'dwes', 'abc123');   
 
         //Creamos la consulta para seleccionar el nombre y el código del producto
-        $consulta = $dwes->prepare('SELECT p.nombre_corto, p.cod, s.tienda, s.producto FROM producto p INNER JOIN stock s ON s.producto = p.cod;');    
+        $consulta = $dwes->prepare('SELECT nombre_corto, cod FROM producto');    
 
         //Ejecutamos la consulta
         $consulta->execute();
@@ -41,7 +41,7 @@
                 foreach($consulta as $registros){
 
                     //Creamos seleccionables dentro de un botón select para dar a elegir al usuario un producto
-                    echo "<option value='" . $registros['nombre_corto'] . "'>" . $registros['nombre_corto'] . "</option>";
+                    echo "<option value='" . $registros['cod'] . "'>" . $registros['nombre_corto'] . "</option>";
 
                 }
 
@@ -53,7 +53,7 @@
 
             <?php
 
-                $consulta = $dwes->prepare('SELECT DISTINCT nombre FROM tienda;');    
+                $consulta = $dwes->prepare('SELECT DISTINCT nombre, cod FROM tienda;');    
 
                 //Ejecutamos la consulta
                 $consulta->execute();
@@ -63,7 +63,7 @@
                 foreach($consulta as $registros){
 
                     //Creamos seleccionables dentro de un botón select para dar a elegir al usuario un producto
-                    echo "<option value='" . $registros['nombre'] . "'>" . $registros['nombre'] . "</option>";
+                    echo "<option value='" . $registros['cod'] . "'>" . $registros['nombre'] . "</option>";
 
                 }
 
