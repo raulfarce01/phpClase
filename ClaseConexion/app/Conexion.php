@@ -56,6 +56,8 @@ class Conexion{
             $contador = 1;
 
         }
+
+        echo $camposDepurados;
         //echo '<br>'. $valor;
 
 
@@ -80,15 +82,21 @@ class Conexion{
 
                     }else{
 
-                        for($i = 0; $i < $contador; $i++){
+                        if($campos == '*'){
 
-                            echo $mostrador->$campos . ', ';
-    
-                        }
+                            $consulta = $this->db->query("SELECT * FROM $tabla");
 
-                    }
+                        }else{
 
-                    
+                            for($i = 0; $i < $contador; $i++){
+
+                                echo $mostrador->$campos . ', ';
+        
+                            }
+                            
+                        } 
+
+                    }                    
 
                     echo "</p>";
 

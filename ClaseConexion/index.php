@@ -17,7 +17,7 @@
 
     $dwes = new Conexion('dwes', 'abc123', 'dwes');
 
-    //$dwes->createSelectSimple('tienda', '*');
+    $dwes->createSelectSimple('tienda', '*');
     //$dwes->createSelectSimple('productos', '*', 'cod', '3DSNG');
     //$dwes->createSelectSimple('productos', '*', 'cod');
 
