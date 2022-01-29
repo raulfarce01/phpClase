@@ -104,29 +104,33 @@
 
                 $consulta = $dwes->query("SELECT unidades FROM stock WHERE tienda = $tienda AND producto = '$prod'");
     
-                if($consulta->fetch()){
-    
-                    //echo "UPDATE stock SET unidades = $udsIn WHERE tienda = $tienda AND producto = '$prod'";
-    
-                    $consulta = $dwes->query("UPDATE stock SET unidades = $udsIn WHERE tienda = $tienda AND producto = '$prod'");
-    
-                    echo "La consulta de actualización se ha realizado correctamente";
-    
-                }else{
-    
-                    //echo "INSERT INTO stock VALUES ('$prod', $tienda, $udsIn)";
-    
-                    $consulta = $dwes->query("INSERT INTO stock VALUES ('$prod', $tienda, $udsIn)");
-    
-                    echo "La consulta de inserción se ha realizado correctamente";
-    
-                }
-    
+            }else{
+
+                echo "ERROR: DEBES INSERTAR UN VALOR POSITIVO EN LA CONSULTA";
+
             }
 
         }catch (PDOException $e){
 
             echo "<p>Error: $p->getMessage()</p>";
+
+        }
+
+        if($consulta->fetch()){
+    
+            //echo "UPDATE stock SET unidades = $udsIn WHERE tienda = $tienda AND producto = '$prod'";
+
+            $consulta = $dwes->query("UPDATE stock SET unidades = $udsIn WHERE tienda = $tienda AND producto = '$prod'");
+
+            echo "La consulta de actualización se ha realizado correctamente";
+
+        }else{
+
+            //echo "INSERT INTO stock VALUES ('$prod', $tienda, $udsIn)";
+
+            $consulta = $dwes->query("INSERT INTO stock VALUES ('$prod', $tienda, $udsIn)");
+
+            echo "La consulta de inserción se ha realizado correctamente";
 
         }
                     
