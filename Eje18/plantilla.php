@@ -58,7 +58,6 @@
                 //Ejecutamos la consulta
                 $consulta->execute();
 
-
                 //Recorremos el objeto en el que se almacenan los registros de la consulta
                 foreach($consulta as $registros){
 
@@ -87,20 +86,27 @@
         $tienda = $_POST['lista2'];
         $prod = $_POST['lista1'];
 
+        //echo "SELECT unidades FROM stock WHERE tienda = $tienda AND producto = '$prod'";
+
         if($udsIn >= 0){
 
-            $consulta = $dwes->prepare("SELECT unidades FROM stock WHERE tienda = (SELECT cod FROM tienda WHERE nombre = $tienda)");
-            $consulta->execute();
+            $consulta = $dwes->query("SELECT unidades FROM stock WHERE tienda = $tienda AND producto = '$prod'");
 
-            if($consulta != NULL){
+            if($consulta->fetch()){
 
-                $consulta = $dwes->prepare("UPDATE stock SET unidades = $udsIn WHERE tienda = (SELECT cod FROM tienda WHERE nombre = $tienda) AND producto = (SELECT nombre_corto FROM producto WHERE nombre_corto = $prod)");
-                $consulta->execute();
+                //echo "UPDATE stock SET unidades = $udsIn WHERE tienda = $tienda AND producto = '$prod'";
+
+                $consulta = $dwes->query("UPDATE stock SET unidades = $udsIn WHERE tienda = $tienda AND producto = '$prod'");
+
+                echo "La consulta de actualización se ha realizado correctamente";
 
             }else{
 
-                $consulta = $dwes->prepare("INSERT INTO stock VALUES ($prod, $tienda, $udsIn)");
-                $consulta->execute();
+                //echo "INSERT INTO stock VALUES ('$prod', $tienda, $udsIn)";
+
+                $consulta = $dwes->query("INSERT INTO stock VALUES ('$prod', $tienda, $udsIn)");
+
+                echo "La consulta de inserción se ha realizado correctamente";
 
             }
 
