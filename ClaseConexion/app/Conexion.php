@@ -23,6 +23,8 @@ class Conexion{
         //Creamos una conexión a la base de datos con el objeto mysqli
         $this->db = new mysqli($dir, $dbUser, $dbPasswd, $dbName);
 
+        echo "Conexión iniciada correctamente en la base de datos: $dbName con el usuario $dbUser";
+
     }
 
     public function closeConex(){
@@ -57,7 +59,8 @@ class Conexion{
 
         }
 
-        echo $camposDepurados;
+        //echo $contador;
+        //echo $camposDepurados;
         //echo '<br>'. $valor;
 
 
@@ -67,8 +70,9 @@ class Conexion{
             if($cond == "" && $valor == ""){
 
                 $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla");
+                $almacen = $consulta->fetch_object();
                 
-                while($mostrador = $consulta->fetch_object()){
+                foreach($almacen as $mostrador){
 
                     echo "<p>";
 
@@ -84,13 +88,22 @@ class Conexion{
 
                         if($campos == '*'){
 
+                            $contador = 0;
+
                             $consulta = $this->db->query("SELECT * FROM $tabla");
+
+                            for($i = 0; $i < $contador; $i++){
+
+                                echo $mostrador[$contador] . ', ';
+
+                            }
 
                         }else{
 
                             for($i = 0; $i < $contador; $i++){
 
                                 echo $mostrador->$campos . ', ';
+                                $contador++;
         
                             }
                             
@@ -120,7 +133,7 @@ class Conexion{
 
                 //Comprobamos que el valor insertado sea o no un número para solucionar un posible problema con las comillas
                 $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = '$valor'");
-                $mostrador = $consulta->fetch_object();
+                $mostrador = $consulta->fetch_array();
 
                 while($mostrador != NULL){
 
@@ -128,13 +141,13 @@ class Conexion{
 
                     for($i = 0; $i < $contador; $i++){
 
-                        echo "$campos[$i], ";
+                        echo "$mostrador[$i], ";
 
                     }
 
                     echo "</p>";
 
-                    $mostrador = $consulta->fetch_object();
+                    $mostrador = $consulta->fetch_array();
 
                 }
                 
