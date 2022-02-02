@@ -27,7 +27,7 @@
 
     <main>
 
-        <form action="editar.php">
+        <form action="#" method="post">
 
             <select name="fam" id="fam">
 
@@ -56,7 +56,17 @@
 
             if(isset($_POST['send'])){
 
+                $fam = $_POST['fam'];
+
                 $consulta = $db->query("SELECT nombre_corto, PVP FROM producto p INNER JOIN familia f ON f.cod = p.familia WHERE familia = $fam");
+                $resultado = $consulta->fetch_object();
+
+                while($resultado != NULL){
+
+                    echo "<p>$resultado->nombre_corto | PVP:$resultado->PVP</p>";
+                    $resultado = $consulta->fetch_object();
+
+                }
 
             }
 
