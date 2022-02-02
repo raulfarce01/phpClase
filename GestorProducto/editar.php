@@ -40,7 +40,7 @@ $db = new Conexion('dwes', 'abc123', 'dwes');
 
     <p>
         <p><label for="nombreProd">Nombre: </label></p>
-        <input type="text" size="30" value="<?php echo $db->createSelectSimple('producto', 'nombre_corto', 'cod', $codProd);; ?>" name="nombreProd">
+        <input type="text" size="30" value="<?php echo $db->createSelectSimple('producto', 'nombre_corto', 'cod', $codProd); ?>" name="nombreProd">
     </p>
 
     <p>
@@ -50,7 +50,7 @@ $db = new Conexion('dwes', 'abc123', 'dwes');
 
     <p>
         <p><label for="pvpProd">PVP: </label></p>
-        <input type="number" name="pvpProd" value="<?php echo $db->createSelectSimple('producto', 'PVP', 'cod', $codProd); ?>">
+        <input type="number" step=0.01 name="pvpProd" value="<?php echo $db->createSelectSimple('producto', 'PVP', 'cod', $codProd); ?>">
     </p>
 
     <input type="submit" value="Actualizar" name="act">

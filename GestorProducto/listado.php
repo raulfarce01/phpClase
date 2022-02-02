@@ -65,16 +65,16 @@
 
                 $fam = $_POST['fam'];
 
-                $consulta = $db->query("SELECT p.nombre_corto, p.PVP, p.cod AS PCODPROD FROM producto p INNER JOIN familia f ON f.cod = p.familia WHERE p.familia = '$fam'");
-                $resultado = $consulta->fetch_object();
+                $consulta2 = $db->query("SELECT p.nombre_corto, p.PVP, p.cod AS PCODPROD FROM producto p INNER JOIN familia f ON f.cod = p.familia WHERE p.familia = '$fam'");
+                $resultado2 = $consulta2->fetch_object();
 
                 echo "<form action='editar.php' method='post'>";
-                while($resultado != NULL){
+                while($resultado2 != NULL){
 
-                    echo "<p>$resultado->nombre_corto | PVP:$resultado->PVP
-                    <input type='hidden' name='codProd' value='$resultado->PCODPROD'>    
+                    echo "<p>$resultado2->nombre_corto | PVP:$resultado2->PVP
+                    <input type='hidden' name='codProd' value='$resultado2->PCODPROD'>    
                     <input type='submit' name='edit' value='Editar'></p>";
-                    $resultado = $consulta->fetch_object();
+                    $resultado2 = $consulta->fetch_object();
 
                 }
 

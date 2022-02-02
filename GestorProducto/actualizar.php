@@ -18,7 +18,7 @@
 
         //echo $codProd;
 
-        echo "UPDATE producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd WHERE cod = '$codProd'";
+        /*echo "UPDATE producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd WHERE cod = '$codProd'";*/
         $db->query("UPDATE producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd");
 
     ?>
@@ -33,12 +33,12 @@
 
     <script>
     
-        /*window.onload = function ()
+        window.onload = function ()
         {
 
 		    document.forms["formulario"].submit();
 
-        }*/
+        }
     
     </script>
 
