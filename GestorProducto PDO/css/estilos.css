@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: violet;
+    height: 80vh;
+    width: 100vw;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+footer {
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+}
+
+select {
+    margin-top: 5vh;
+}
+
+input[type=submit] {
+    width: 70px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: tomato;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(255, 151, 132);
+}
+
+.formLista {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
