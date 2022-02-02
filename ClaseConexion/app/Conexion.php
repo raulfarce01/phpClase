@@ -264,7 +264,7 @@ class Conexion{
             if(is_string($valor)){
 
                 //@see function separaCampos
-                $this->db->query('UPDATE ' . $tabla . ' SET ' . $this->separaCampos($camposArray, $valorUpdateArray) . ' WHERE ' . $cond . ' = ' . $valor);
+                $this->db->query('UPDATE ' . $tabla . ' SET ' . $this->separaCampos($camposArray, $valorUpdateArray) . ' WHERE ' . $cond . ' = ' . '"'. $valor .'"');
 
                 echo "<p>Valor: " . $this->separaCampos($camposArray, $valorUpdateArray) . "actualizados correctamente en la tabla $cond al registro $valor</p>";
 

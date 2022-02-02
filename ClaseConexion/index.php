@@ -25,12 +25,12 @@
     $dwes->createSelectSimple('producto', 'pvp, nombre_corto');
     $dwes->createSelectSimple('producto', 'nombre_corto', 'cod');
 
-    $stock = Array('8NIGE', 2, 6);
+    $stock = Array('8NIGE', 6, 2);
     $dwes->insertData('productos', $stock);
 
-    $dwes->deleteData('stock', 'producto', '8NIGE');
+    $dwes->updateData('stock', 'producto', '8NIGE', 'unidades', 4);
 
-    $dwes->updateData('stock', 'producto', '3DSNG', 'unidades', 4);
+    //$dwes->deleteData('stock', 'producto', '8NIGE');
 
     $dwes->closeConex();
 

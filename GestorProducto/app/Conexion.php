@@ -23,7 +23,7 @@ class Conexion{
         //Creamos una conexión a la base de datos con el objeto mysqli
         $this->db = new mysqli($dir, $dbUser, $dbPasswd, $dbName);
 
-        echo "Conexión iniciada correctamente en la base de datos: $dbName con el usuario $dbUser";
+        //echo "Conexión iniciada correctamente en la base de datos: $dbName con el usuario $dbUser";
 
     }
 
@@ -79,13 +79,17 @@ class Conexion{
                     $cuentaCampos = mysqli_num_fields($consulta);
                     $almacen = $consulta->fetch_array();
                     
-                    echo $cuentaCampos;
-                    echo (count($almacen));
+                    //echo $cuentaCampos;
+                    //echo (count($almacen));
+
+                    //echo '<table>';
 
                     while($almacen != NULL){
 
-                            echo "<p>";
+                            //echo "<tr>";
                             for($i = 0; $i < $cuentaCampos; $i++){
+
+                                //echo "<td>";
 
                                 if($i == $cuentaCampos - 1){
 
@@ -97,13 +101,17 @@ class Conexion{
     
                                 }
 
+                                //echo "</td>";
+
                             }
-                            echo "</p>";                  
+                            //echo "</tr>";                  
 
                         $almacen = $consulta->fetch_array();
 
 
                     }
+
+                    //echo '</table>';
 
                 }
 
@@ -127,11 +135,15 @@ class Conexion{
                 $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = '$valor'");
                 $mostrador = $consulta->fetch_array();
 
+                //echo "<table>";
+
                 while($mostrador != NULL){
 
-                    echo "<p>";
+                    //echo "<tr>";
 
                     for($i = 0; $i < $contador; $i++){
+
+                        //echo "<td>";
 
                         if($i == $contador - 1){
 
@@ -143,15 +155,17 @@ class Conexion{
 
                         }
 
+                        //echo "</td>";
+
                     }
 
-                    echo "</p>";
+                    //echo "</tr>";
 
                     $mostrador = $consulta->fetch_array();
 
                 }
             
-                
+                //echo "</table>";
 
             }else{
 
@@ -159,12 +173,15 @@ class Conexion{
                 $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = $valor");
                 $mostrador = $consulta->fetch_object();
 
+                //echo "<table>";
                 //Recorremos los resultados de la consulta y los mostramos
                 while($mostrador != NULL){
 
-                    echo "<p>";
+                    //echo "<tr>";
 
                     for($i = 0; $i < $contador; $i++){
+
+                        //echo "<td>";
 
                         if($i == $contador - 1){
 
@@ -176,13 +193,17 @@ class Conexion{
 
                         }
 
+                        //echo "</td>";
+
                     }
 
-                    echo "</p>";
+                    //echo "</tr>";
 
                     $mostrador = $consulta->fetch_object();
 
                 }
+
+                //echo "</table>";
             }
 
         }
@@ -264,7 +285,7 @@ class Conexion{
             if(is_string($valor)){
 
                 //@see function separaCampos
-                $this->db->query('UPDATE ' . $tabla . ' SET ' . $this->separaCampos($camposArray, $valorUpdateArray) . ' WHERE ' . $cond . ' = ' . $valor);
+                $this->db->query("UPDATE $tabla SET $this->separaCampos($camposArray, $valorUpdateArray) WHERE $cond = '$valor'");
 
                 echo "<p>Valor: " . $this->separaCampos($camposArray, $valorUpdateArray) . "actualizados correctamente en la tabla $cond al registro $valor</p>";
 

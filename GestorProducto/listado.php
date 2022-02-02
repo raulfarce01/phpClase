@@ -13,8 +13,6 @@
         error_reporting(E_ALL);
         ini_set('display_errors', '1');
         
-        require "./app/Conexion.php";
-
         $db = new mysqli('localhost', 'dwes', 'abc123', 'dwes');
 
     ?>
@@ -43,7 +41,6 @@
 
                     }
 
-
                 ?>
 
             </select>
@@ -58,15 +55,28 @@
 
                 $fam = $_POST['fam'];
 
-                $consulta = $db->query("SELECT nombre_corto, PVP FROM producto p INNER JOIN familia f ON f.cod = p.familia WHERE familia = $fam");
+                $consulta = $db->query("SELECT p.nombre_corto, p.PVP, p.cod AS PCODPROD FROM producto p INNER JOIN familia f ON f.cod = p.familia WHERE p.familia = '$fam'");
                 $resultado = $consulta->fetch_object();
 
+                echo "<form action='editar.php' method='post'>";
                 while($resultado != NULL){
 
-                    echo "<p>$resultado->nombre_corto | PVP:$resultado->PVP</p>";
+                    echo "<p>$resultado->nombre_corto | PVP:$resultado->PVP
+                    <input type='hidden' name='codProd' value='$resultado->PCODPROD'>    
+                    <input type='submit' name='edit' value='Editar'></p>";
                     $resultado = $consulta->fetch_object();
 
                 }
+
+                $db->close();
+
+                echo "</form>";
+
+            }
+
+            if(isset($_POST['act'])){
+
+                echo '<p>Se ha actualizado el producto correctamente</p>';
 
             }
 
