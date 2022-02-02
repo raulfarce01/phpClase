@@ -17,9 +17,12 @@
 
     $dwes = new Conexion('dwes', 'abc123', 'dwes');
 
-    //$dwes->createSelectSimple('tienda', '*');
+    $dwes->createSelectSimple('tienda', '*');
+    /*mirar else linea 108*/$dwes->createSelectSimple('tienda', 'cod, nombre');
+    //$dwes->createSelectSimple('tienda', '*', 'cod', 3);
     $dwes->createSelectSimple('producto', 'pvp', 'cod', 'ARCLPMP32GBN');
     $dwes->createSelectSimple('producto', 'pvp, nombre_corto', 'cod', 'ARCLPMP32GBN');
+    $dwes->createSelectSimple('producto', 'pvp, nombre_corto');
     $dwes->createSelectSimple('producto', 'nombre_corto', 'cod');
 
     $stock = Array('8NIGE', 2, 6);

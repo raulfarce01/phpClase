@@ -72,51 +72,41 @@ class Conexion{
 
                 $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla");
                 $almacen = $consulta->fetch_object();
-                
-                foreach($almacen as $mostrador){
 
-                    echo "<p>";
+                if($campos == '*'){
 
-                    if(is_array($campos)){
+                    $consulta = $this->db->query("SELECT * FROM $tabla");
+                    $cuentaCampos = mysqli_num_fields($consulta);
+                    $almacen = $consulta->fetch_array();
+                    
+                    echo $cuentaCampos;
+                    echo (count($almacen));
 
-                        for($i = 0; $i < $contador; $i++){
+                    while($almacen != NULL){
 
-                            echo $mostrador->$campos[$i] . ', ';
+                            echo "<p>";
+                            for($i = 0; $i < $cuentaCampos; $i++){
+
+                                if($i == $cuentaCampos - 1){
+
+                                    echo "$almacen[$i]";
     
-                        }
-
-                    }else{
-
-                        if($campos == '*'){
-
-                            $contador = 0;
-
-                            $consulta = $this->db->query("SELECT * FROM $tabla");
-
-                            for($i = 0; $i < $contador; $i++){
-
-                                echo $mostrador[$contador] . ', ';
+                                }else{
+    
+                                    echo "$almacen[$i], ";
+    
+                                }
 
                             }
+                            echo "</p>";                  
 
-                        }else{
+                        $almacen = $consulta->fetch_array();
 
-                            for($i = 0; $i < $contador; $i++){
 
-                                echo $mostrador->$campos . ', ';
-                                $contador++;
-        
-                            }
-                            
-                        } 
-
-                    }                    
-
-                    echo "</p>";
-
-                    $mostrador = $consulta->fetch_object();
+                    }
 
                 }
+
 
             }else if($cond == "" && $valor != ""){
 
@@ -132,6 +122,7 @@ class Conexion{
 
             if(is_string($valor)){
 
+
                 //Comprobamos que el valor insertado sea o no un número para solucionar un posible problema con las comillas
                 $consulta = $this->db->query("SELECT $camposDepurados FROM $tabla WHERE $cond = '$valor'");
                 $mostrador = $consulta->fetch_array();
@@ -142,7 +133,15 @@ class Conexion{
 
                     for($i = 0; $i < $contador; $i++){
 
-                        echo "$mostrador[$i], ";
+                        if($i == $contador - 1){
+
+                            echo "$mostrador[$i]";
+
+                        }else{
+
+                            echo "$mostrador[$i], ";
+
+                        }
 
                     }
 
@@ -151,6 +150,7 @@ class Conexion{
                     $mostrador = $consulta->fetch_array();
 
                 }
+            
                 
 
             }else{
@@ -166,7 +166,15 @@ class Conexion{
 
                     for($i = 0; $i < $contador; $i++){
 
-                        echo "$campos[$i], ";
+                        if($i == $contador - 1){
+
+                            echo "$campos[$i]";
+
+                        }else{
+
+                            echo "$campos[$i], ";
+
+                        }
 
                     }
 
@@ -194,6 +202,9 @@ class Conexion{
         $valoresDepurados = implode(", ", $valores);
 
         $this->db->query("INSERT INTO $tabla VALUES ($valoresDepurados)");
+
+        /*$consulta = $this->db->query("SELECT * FROM $tabla");
+        $nombreCampos = $consulta->fetch_object();*/
 
         echo "<p>Valores: $valoresDepurados insertados correctamente en la tabla $tabla</p>";
 
@@ -255,14 +266,14 @@ class Conexion{
                 //@see function separaCampos
                 $this->db->query('UPDATE ' . $tabla . ' SET ' . $this->separaCampos($camposArray, $valorUpdateArray) . ' WHERE ' . $cond . ' = ' . $valor);
 
-                echo "<p>Valor: " . $this->separaCampos($camposArray, $valorUpdateArray) . "actualizados correctamente </p>";
+                echo "<p>Valor: " . $this->separaCampos($camposArray, $valorUpdateArray) . "actualizados correctamente en la tabla $cond al registro $valor</p>";
 
             }else{
 
                 //@see function separaCampos
                 $this->db->query("UPDATE $tabla SET separaCampos($camposArray, $valorUpdateArray) WHERE $cond = $valor");
 
-                echo "<p>Valor: $this->separaCampos($camposArray, $valorUpdateArray) actualizados correctamente</p>";
+                echo "<p>Valor: $this->separaCampos($camposArray, $valorUpdateArray) actualizado correctamente en la tabla $cond al registro $valor</p>";
 
             }
 
