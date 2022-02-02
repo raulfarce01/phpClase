@@ -15,6 +15,8 @@ $db = new Conexion('dwes', 'abc123', 'dwes');
     <title>
         <?php  $db->createSelectSimple('producto', 'nombre_corto', 'cod', $codProd);?>
     </title>
+    <link href="./css/estilos.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
     

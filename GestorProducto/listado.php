@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Productos</title>
+    <link href="./css/estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     
@@ -27,7 +28,7 @@
 
         <?php
 
-            if(isset($_POST['act1'])){
+            if(isset($_POST['act'])){
 
                 echo '<p>Se ha actualizado el producto correctamente</p>';
 
@@ -59,32 +60,39 @@
 
         </form>
 
+        <div class="lista">
         <?php
 
             if(isset($_POST['send'])){
 
                 $fam = $_POST['fam'];
 
-                $consulta2 = $db->query("SELECT p.nombre_corto, p.PVP, p.cod AS PCODPROD FROM producto p INNER JOIN familia f ON f.cod = p.familia WHERE p.familia = '$fam'");
-                $resultado2 = $consulta2->fetch_object();
+                $consulta = $db->query("SELECT p.nombre_corto, p.PVP, p.cod AS PCODPROD FROM producto p INNER JOIN familia f ON f.cod = p.familia WHERE p.familia = '$fam'");
+                $resultado = $consulta->fetch_object();
 
-                echo "<form action='editar.php' method='post'>";
-                while($resultado2 != NULL){
+                while($resultado != NULL){
 
-                    echo "<p>$resultado2->nombre_corto | PVP:$resultado2->PVP
-                    <input type='hidden' name='codProd' value='$resultado2->PCODPROD'>    
+                    echo "<form action='editar.php' method='post' class='formLista'>";
+
+
+                    echo "<p>$resultado->nombre_corto | PVP:$resultado->PVP
+                    <input type='hidden' name='codProd' value='$resultado->PCODPROD'>
                     <input type='submit' name='edit' value='Editar'></p>";
-                    $resultado2 = $consulta->fetch_object();
+                    $resultado = $consulta->fetch_object();
+
+                    echo "</form>";
+
 
                 }
 
+
                 $db->close();
 
-                echo "</form>";
 
             }
 
         ?>
+        </div>
 
     </main>
 

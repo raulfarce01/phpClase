@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualización</title>
+    <link href="./css/estilos.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 
@@ -19,14 +21,13 @@
         //echo $codProd;
 
         /*echo "UPDATE producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd WHERE cod = '$codProd'";*/
-        $db->query("UPDATE producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd");
+        $db->query("UPDATE producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd WHERE cod = '$codProd'");
 
     ?>
 
     <form action="./listado.php" method="post" name="formulario">
 
-        <input type="hidden" name="act1" value="1">
-        <input type="submit" name="act">
+        <input type="hidden" name="act" value="1">
 
     </form>
 
