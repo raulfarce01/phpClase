@@ -25,6 +25,16 @@
 
     <main>
 
+        <?php
+
+            if(isset($_POST['act1'])){
+
+                echo '<p>Se ha actualizado el producto correctamente</p>';
+
+            }
+
+        ?>
+
         <form action="#" method="post">
 
             <select name="fam" id="fam">
@@ -71,12 +81,6 @@
                 $db->close();
 
                 echo "</form>";
-
-            }
-
-            if(isset($_POST['act'])){
-
-                echo '<p>Se ha actualizado el producto correctamente</p>';
 
             }
 

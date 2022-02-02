@@ -18,13 +18,14 @@
 
         //echo $codProd;
 
-        //echo "UPDATE INTO producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd WHERE cod = '$codProd'";
-        $db->query("UPDATE INTO producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd");
+        echo "UPDATE producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd WHERE cod = '$codProd'";
+        $db->query("UPDATE producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd");
 
     ?>
 
     <form action="./listado.php" method="post" name="formulario">
 
+        <input type="hidden" name="act1" value="1">
         <input type="submit" name="act">
 
     </form>
@@ -32,12 +33,12 @@
 
     <script>
     
-        window.onload = function ()
+        /*window.onload = function ()
         {
 
 		    document.forms["formulario"].submit();
 
-        }
+        }*/
     
     </script>
 
