@@ -38,7 +38,7 @@ class Conexion{
 
     //
     //@param $tabla contiene un String donde almacenamos la tabla en la que queremos hacer el select
-    //@param $campos contiene un Arrray donde se guardan los campos que queremos mostrar en la consulta
+    //@param $campos contiene un Arrray o un String donde se guardan los campos que queremos mostrar en la consulta
     //@param $cond es un String que contiene la condición que queremos aplicar al select
     //@param $valor es un String o Entero que almacena el valor de la condición de la consulta
     //
@@ -55,7 +55,8 @@ class Conexion{
         }else{
 
             $camposDepurados = $campos;
-            $contador = 1;
+            $cuentaCampos = explode(",", $campos);
+            $contador = count($cuentaCampos);
 
         }
 

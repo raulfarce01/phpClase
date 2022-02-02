@@ -19,6 +19,7 @@
 
     //$dwes->createSelectSimple('tienda', '*');
     $dwes->createSelectSimple('producto', 'pvp', 'cod', 'ARCLPMP32GBN');
+    $dwes->createSelectSimple('producto', 'pvp, nombre_corto', 'cod', 'ARCLPMP32GBN');
     $dwes->createSelectSimple('producto', 'nombre_corto', 'cod');
 
     $stock = Array('8NIGE', 2, 6);
