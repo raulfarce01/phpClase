@@ -14,10 +14,9 @@
         ini_set('display_errors', '1');
 
         require './app/Conexion.php';
-        require './app/vistaImagen.php';
 
-        $frikytienda = new Conexion('frikytienda', '123456', 'frikytienda');
-        $mysqli = new mysqli('localhost', 'frikytienda', '123456', 'frikytienda');
+        $frikytienda = new Conexion('frikyAdmin', '123456', 'frikytienda');
+        $mysqli = new mysqli('localhost', 'frikyAdmin', '123456', 'frikytienda');
 
     ?>
     
@@ -30,7 +29,7 @@
     <nav>
 
         <a href="upload.php">Añadir un Producto</a>
-        <!--<a href="modify.php">Modificar un Producto</a>-->
+        <a href="modify.php">Modificar un Producto</a>
 
     </nav>
 
@@ -40,7 +39,7 @@
 
             <?php
 
-                $consulta = $mysqli->query("SELECT nombreFig, descFigura, precioFigura, imgFig FROM figura");
+                $consulta = $mysqli->query("SELECT idFig, nombreFig, descFig, precioFig, imgFig FROM figura");
                 $res = $consulta->fetch_object();
 
                 while($res != NULL){
@@ -50,19 +49,16 @@
                         <div class='producto'>
                         
                             <div class='imagen'>
-                        ".
-                            muestraImagen($mysqli, $res->imgFig)
-                        ."
-                            
+                                <img width='100' src='data:image/png;base64, ".base64_encode($res->imgFig)."'></img>
                             </div>
                             <div class='nombre'>
                                 $res->nombreFig            
                             </div>
                             <div class='descripcion'>
-                                $res->decFigura
+                                $res->descFig
                             </div>
                             <div class='precio'>
-                                $res->precioFigura
+                                $res->precioFig €
                             </div>
                             <div class='compra'>
 
@@ -73,6 +69,8 @@
                         </div>
                     
                     ";
+
+                    $res = $consulta->fetch_object();
 
                 }
                 

@@ -21,11 +21,11 @@
         //echo $codProd;
 
         /*echo "UPDATE producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd WHERE cod = '$codProd'";*/
-        $db->query("UPDATE figura SET nombreFig = '$nombreFig', descFig = '$descFig', precioFig = $precioFig WHERE idFig = '$idFig'");
+        $db->query("UPDATE figura SET nombreFig = '$nombreFig', descFig = '$descFig', precioFig = $precioFig WHERE idFig = $idFig");
 
     ?>
 
-    <form action="../listado.php" method="post" name="formulario">
+    <form action="../modify.php" method="post" name="formulario">
 
         <input type="hidden" name="act" value="1">
 

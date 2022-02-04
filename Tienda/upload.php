@@ -26,7 +26,8 @@
         <input type="number" step="0.01" name="precio" required>
 
     <p>
-        <input type="submit" name="submit" value="sube"/>
+        <input type="submit" name="submit" value="Subir Imagen"/>
+        <a href="./index.php"><div class="boton"><p>Inicio</p></div></a>
     </p>
     </form>
 </body>

@@ -1,8 +1,8 @@
 <?php 
 
-require './app/Conexion.php';
-$codProd = $_POST['codProd'];
-$db = new Conexion('dwes', 'abc123', 'dwes');
+require './Conexion.php';
+$idFig = $_POST['idFig'];
+$db = new Conexion('frikyAdmin', '123456', 'frikytienda');
 
 ?>
 
@@ -13,7 +13,7 @@ $db = new Conexion('dwes', 'abc123', 'dwes');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?php  $db->createSelectSimple('producto', 'nombre_corto', 'cod', $codProd);?>
+        <?php  $db->createSelectSimple('figura', 'nombreFig', 'idFig', $idFig);?>
     </title>
     <!--<link href="./css/estilos.css" rel="stylesheet" type="text/css">-->
 
@@ -41,18 +41,18 @@ $db = new Conexion('dwes', 'abc123', 'dwes');
     <input type="hidden" name="codProd" value="<?php echo $idFig; ?>">
 
     <p>
-        <p><label for="nombreProd">Nombre: </label></p>
+        <p><label for="nombreFig">Nombre: </label></p>
         <input type="text" size="30" value="<?php echo $db->createSelectSimple('figura', 'nombreFig', 'idFig', $idFig); ?>" name="nombreFig">
     </p>
 
     <p>
-        <p><label for="descProd">Descripción: </label></p>
-        <textarea name="descProd" rows="20" cols="50"><?php echo $db->createSelectSimple('figura', 'descFig', 'idFig', $idFig); ?></textarea>
+        <p><label for="descFig">Descripción: </label></p>
+        <textarea name="descFig" rows="20" cols="50"><?php echo $db->createSelectSimple('figura', 'descFig', 'idFig', $idFig); ?></textarea>
     </p>
 
     <p>
-        <p><label for="pvpProd">PVP: </label></p>
-        <input type="number" step=0.01 name="pvpProd" value="<?php echo $db->createSelectSimple('figura', 'precioFig', 'idFig', $idFig); ?>">
+        <p><label for="precioFig">PVP: </label></p>
+        <input type="number" step=0.01 name="precioFig" value="<?php echo $db->createSelectSimple('figura', 'precioFig', 'idFig', $idFig); ?>">
     </p>
 
     <input type="submit" value="Actualizar" name="act">

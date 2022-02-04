@@ -2,9 +2,12 @@ CREATE DATABASE IF NOT EXISTS frikytienda;
 USE frikytienda;
 
 CREATE TABLE IF NOT EXISTS figura(
-	idFig INT(10) PRIMARY KEY,
+	idFig INT(10) PRIMARY KEY AUTO_INCREMENT,
     nombreFig VARCHAR(100) NOT NULL,
     descFig VARCHAR(1000) NOT NULL,
     precioFig FLOAT(5,2) NOT NULL,
     fotoFig LONGBLOB NOT NULL
 );
+
+CREATE USER frikyAdmin IDENTIFIED BY '123456';
+GRANT ALL ON frikytienda.* TO 'frikyAdmin';
