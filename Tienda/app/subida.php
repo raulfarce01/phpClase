@@ -22,27 +22,17 @@ if(isset($_POST["submit"])){
         if($db->connect_error){
             die("Connection failed: " . $db->connect_error);
         }
-        
-        $dataTime = date("Y-m-d H:i:s");
-        
+                
+        //echo $_POST['nombre'].", ".$_POST['desc'].", ".$_POST['precio'];
+        //echo "INSERT INTO figura (nombreFig, descFig, precioFig, fotoFig) VALUES (".$_POST['nombre'].", ".$_POST['desc'].", ".$_POST['precio'].", '$imgContent')";
         //Insert image content into database
-        $insert = $db->query("INSERT into images (image) VALUES ('$imgContent')");
+        $insert = $db->query("INSERT INTO figura (nombreFig, descFig, precioFig, fotoFig) VALUES (".$_POST['nombre'].", ".$_POST['desc'].", ".$_POST['precio'].", '$imgContent')");
         if($insert){
             echo "File uploaded successfully.";
         }else{
             echo "File upload failed, please try again.";
         } 
 
-        $idImg = $db->query("SELECT idImg FROM imagenprod WHERE cadenaImgen = '$imgContent'");
-        $resImg = $idImg->fetch_array();
-
-        echo $resImg['idImg'];
-        $insert = $db->query("INSERT into figura (nombreFig, descFigura, precioFigura, imgFig) VALUES ('".$_POST['nombre']."', '".$_POST['desc']."', ". $_POST['precio'].", '".$resImg['idImg']."'");
-        if($insert){
-            echo "Figura uploaded successfully.";
-        }else{
-            echo "Figura upload failed, please try again.";
-        } 
     }else{
         echo "Please select an image file to upload.";
     }

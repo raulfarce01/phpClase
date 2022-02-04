@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS frikytienda;
+USE frikytienda;
+
+CREATE TABLE IF NOT EXISTS figura(
+	idFig INT(10) PRIMARY KEY,
+    nombreFig VARCHAR(100) NOT NULL,
+    descFig VARCHAR(1000) NOT NULL,
+    precioFig FLOAT(5,2) NOT NULL,
+    fotoFig LONGBLOB NOT NULL
+);
