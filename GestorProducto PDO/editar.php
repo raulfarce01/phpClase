@@ -18,7 +18,7 @@ $db = new PDO('mysql:host=localhost; dbname=dwes', 'dwes', 'abc123');
 
         } ?>
     </title>
-    <!--<link href="./css/estilos.css" rel="stylesheet" type="text/css">-->
+    <link href="./css/editar.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>

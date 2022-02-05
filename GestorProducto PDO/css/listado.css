@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: whitesmoke;
 }
 
 body {
-    background-color: whitesmoke;
+    background-color: rgb(24, 24, 24);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,9 +26,9 @@ header {
 main {
     display: flex;
     flex-direction: column;
-    background-color: violet;
+    background-color: rgb(0, 2, 17);
     height: 80vh;
-    width: 100vw;
+    width: 90vw;
     justify-content: flex-start;
     padding-left: 10px;
 }
@@ -50,10 +51,16 @@ input[type=submit] {
     border: 1px solid black;
     border-radius: 5px;
     background-color: tomato;
+    color: black;
 }
 
 input[type=submit]:hover {
     background-color: rgb(255, 151, 132);
+}
+
+select,
+option {
+    color: black;
 }
 
 .formLista {
@@ -61,4 +68,10 @@ input[type=submit]:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.actualizado {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
 }

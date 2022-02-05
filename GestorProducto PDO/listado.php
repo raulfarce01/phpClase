@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Productos</title>
-    <!--<link href="./css/estilos.css" rel="stylesheet" type="text/css">-->
+    <link href="./css/listado.css" rel="stylesheet" type="text/css">
     </head>
 <body>
     
@@ -30,7 +30,7 @@
 
             if(isset($_POST['act'])){
 
-                echo '<p>Se ha actualizado el producto correctamente</p>';
+                echo '<p class="actualizado">Se ha actualizado el producto correctamente</p>';
 
             }
 
