@@ -15,7 +15,7 @@ $db = new Conexion('dwes', 'abc123', 'dwes');
     <title>
         <?php  $db->createSelectSimple('producto', 'nombre_corto', 'cod', $codProd);?>
     </title>
-    <!--<link href="./css/estilos.css" rel="stylesheet" type="text/css">-->
+    <link href="./css/editar.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -36,30 +36,40 @@ $db = new Conexion('dwes', 'abc123', 'dwes');
         <h1>Información del Producto</h1>
     </header>
 
-    <form action="./actualizar.php" method="post">
+    <main>
 
-    <input type="hidden" name="codProd" value="<?php echo $idFig; ?>">
+        <form action="./actualizar.php" method="post">
 
-    <p>
-        <p><label for="nombreProd">Nombre: </label></p>
-        <input type="text" size="30" value="<?php echo $db->createSelectSimple('figura', 'nombreFig', 'idFig', $idFig); ?>" name="nombreFig">
-    </p>
+            <input type="hidden" name="codProd" value="<?php echo $codProd; ?>">
 
-    <p>
-        <p><label for="descProd">Descripción: </label></p>
-        <textarea name="descProd" rows="20" cols="50"><?php echo $db->createSelectSimple('figura', 'descFig', 'idFig', $idFig); ?></textarea>
-    </p>
+            <p>
+                <p><label for="nombreProd">Nombre: </label></p>
+                <input type="text" size="30" value="<?php echo $db->createSelectSimple('producto', 'nombre_corto', 'cod', $codProd); ?>" name="nombre">
+            </p>
 
-    <p>
-        <p><label for="pvpProd">PVP: </label></p>
-        <input type="number" step=0.01 name="pvpProd" value="<?php echo $db->createSelectSimple('figura', 'precioFig', 'idFig', $idFig); ?>">
-    </p>
+            <p>
+                <p><label for="descProd">Descripción: </label></p>
+                <textarea name="descProd" rows="20" cols="50"><?php echo $db->createSelectSimple('producto', 'descripcion', 'cod', $codProd); ?></textarea>
+            </p>
 
-    <input type="submit" value="Actualizar" name="act">
-    <a href="../listado.php"><input type="button" value="Cancelar" name="cancel"></a>
+            <p>
+                <p><label for="pvpProd">PVP: </label></p>
+                <input type="number" step=0.01 name="pvpProd" value="<?php echo $db->createSelectSimple('producto', 'PVP', 'cod', $codProd); ?>">
+            </p>
+
+            <input type="submit" value="Actualizar" name="act">
+            <a href="../listado.php"><input type="button" value="Cancelar" name="cancel"></a>
 
 
-    </form>
+        </form>
+
+    </main>
+    
+    <footer>
+
+        DWES - IES Puertas del Campo - Raúl Fernández Arce
+
+    </footer>
 
 </body>
 </html>

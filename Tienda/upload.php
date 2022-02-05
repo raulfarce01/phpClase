@@ -7,6 +7,9 @@
     <title>Nuevo Producto</title>
 </head>
 <body>
+
+    <h1>Adición de Productos</h1>
+
     <form action="./app/subida.php" method="post" enctype="multipart/form-data">
         
     <p>

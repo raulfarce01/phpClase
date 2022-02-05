@@ -1,3 +1,51 @@
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+require './app/Conexion.php';
+
+$frikytienda = new Conexion('frikyAdmin', '123456', 'frikytienda');
+$mysqli = new mysqli('localhost', 'frikyAdmin', '123456', 'frikytienda');
+
+/*$consultaCookie = $mysqli->query("SELECT idFig FROM figura");
+$resCookie = $consultaCookie->fetch_object();
+
+
+
+while($resCookie != NULL){
+
+    if(!isset($cantidad["$resCookie->idFig"])){
+
+        $cantidad["$rescookie->idFig"] = 0;
+    
+    }else{
+
+        if(isset($_POST["$resCookie->idFig"])){
+
+            $cantidad["$rescookie->idFig"]++;
+
+            if(!isset($_COOKIE["$resCookie->idFig"])){
+    
+                setcookie($resCookie->idFig, $cantidad["$rescookie->idFig"], time()*3600*24*7);
+        
+            }else{
+
+                $_COOKIE["$resCookie->idFig"]++;
+
+            }
+        }
+
+    }
+    
+    $resCookie = $consultaCookie->fetch_object();
+
+}*/
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,18 +55,6 @@
     <title>Inicio</title>
 </head>
 <body>
-
-    <?php
-
-        error_reporting(E_ALL);
-        ini_set('display_errors', '1');
-
-        require './app/Conexion.php';
-
-        $frikytienda = new Conexion('frikyAdmin', '123456', 'frikytienda');
-        $mysqli = new mysqli('localhost', 'frikyAdmin', '123456', 'frikytienda');
-
-    ?>
     
     <header>
 
@@ -62,7 +98,7 @@
                             </div>
                             <div class='compra'>
 
-
+                                <input type='button' name='$res->idFig' value='Comprar'>
 
                             </div>
                         
@@ -80,7 +116,20 @@
         </div>
         <div class="carrito">
 
-            
+            <?php
+
+                /*$consultaCookie = $mysqli->query("SELECT idFig FROM figura");
+                $resCookie = $consultaCookie->fetch_object();
+
+                while($resCookie != NULL){
+
+                    echo $_COOKIE["$resCookie->idFig"] , '<br>';
+                    
+                    $resCookie = $consultaCookie->fetch_object();
+
+                }*/
+
+            ?>
 
         </div>
 

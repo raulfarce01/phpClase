@@ -5,27 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualización</title>
-    <!--<link href="./css/estilos.css" rel="stylesheet" type="text/css">-->
+    <link href="./css/actualizar.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 
     <?php
 
-        $db = new mysqli('localhost', 'frikyAdmin', '123456', 'frikytienda');
-        $idFig = $_POST['idFig'];
-        $nombreFig = $_POST['nombreFig'];
-        $descFig = $_POST['descFig'];
-        $prefioFig = $_POST['precioFig'];
+        $db = new mysqli('localhost', 'dwes', 'abc123', 'dwes');
+        $codProd = $_POST['codProd'];
+        $nombre = $_POST['nombre'];
+        $descProd = $_POST['descProd'];
+        $pvpProd = $_POST['pvpProd'];
 
         //echo $codProd;
 
         /*echo "UPDATE producto SET nombre_corto = '$nombreProd', descripcion = '$descProd', PVP = $pvpProd WHERE cod = '$codProd'";*/
-        $db->query("UPDATE figura SET nombreFig = '$nombreFig', descFig = '$descFig', precioFig = $precioFig WHERE idFig = '$idFig'");
+        $db->query("UPDATE producto SET nombre_corto = '$nombre', descripcion = '$descProd', PVP = $pvpProd WHERE cod = '$codProd'");
 
     ?>
 
-    <form action="../listado.php" method="post" name="formulario">
+    <form action="./listado.php" method="post" name="formulario">
 
         <input type="hidden" name="act" value="1">
 
