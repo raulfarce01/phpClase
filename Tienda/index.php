@@ -23,7 +23,7 @@ while($resCookie != NULL){
 
         if(isset($_POST["$resCookie->idFig"])){
 
-            $cantidad["$rescookie->idFig"]++;
+            $cantidad["$resCookie->idFig"]++;
 
             if(!isset($_COOKIE["$resCookie->idFig"])){
     
