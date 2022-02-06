@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: whitesmoke;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 2, 17);
+    width: 90%;
+    height: 80%;
+}
+
+h1 {
+    position: absolute;
+    top: 10px;
+}
+
+form p {
+    margin: 3vh 0;
+}
+
+input {
+    color: black;
+}
+
+textarea {
+    color: black;
+}
+
+input[type=submit] {
+    width: 70px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: tomato;
+    color: black;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(255, 151, 132);
+}
+
+input[type=button] {
+    width: 70px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: tomato;
+    color: black;
+}
+
+input[type=button]:hover {
+    background-color: rgb(255, 151, 132);
+}
+
+a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: tomato;
+    width: 70px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 5vh;
+}
+
+.boton:hover {
+    background-color: rgb(255, 151, 132);
+}

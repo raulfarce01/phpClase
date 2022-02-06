@@ -15,7 +15,7 @@ $db = new Conexion('frikyAdmin', '123456', 'frikytienda');
     <title>
         <?php  $db->createSelectSimple('figura', 'nombreFig', 'idFig', $idFig);?>
     </title>
-    <!--<link href="./css/estilos.css" rel="stylesheet" type="text/css">-->
+    <link href="../css/editar.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -56,7 +56,7 @@ $db = new Conexion('frikyAdmin', '123456', 'frikytienda');
     </p>
 
     <input type="submit" value="Actualizar" name="act">
-    <a href="../listado.php"><input type="button" value="Cancelar" name="cancel"></a>
+    <a href="../index.php"><input type="button" value="Cancelar" name="cancel"></a>
 
 
     </form>

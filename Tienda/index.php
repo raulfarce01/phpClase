@@ -53,6 +53,7 @@ while($resCookie != NULL){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    <link href="./css/index.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     
@@ -64,8 +65,8 @@ while($resCookie != NULL){
 
     <nav>
 
-        <a href="upload.php">Añadir un Producto</a>
-        <a href="modify.php">Modificar un Producto</a>
+        <a href="upload.php"><div class="boton">Añadir</div></a>
+        <a href="modify.php"><div class="boton">Modificar</div></a>
 
     </nav>
 
@@ -98,7 +99,9 @@ while($resCookie != NULL){
                             </div>
                             <div class='compra'>
 
-                                <input type='button' name='$res->idFig' value='Comprar'>
+                                <form action='#' method='post'>
+                                    <input type='submit' name='$res->idFig' value='Comprar'>
+                                </form>
 
                             </div>
                         

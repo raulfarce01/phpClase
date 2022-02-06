@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Producto</title>
+    <link href="./css/subir.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -29,7 +30,7 @@
         <input type="number" step="0.01" name="precio" required>
 
     <p>
-        <input type="submit" name="submit" value="Subir Imagen"/>
+        <input type="submit" name="submit" value="Subir"/>
         <a href="./index.php"><div class="boton"><p>Inicio</p></div></a>
     </p>
     </form>
