@@ -3,25 +3,21 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-require './app/Conexion.php';
-
-$frikytienda = new Conexion('frikyAdmin', '123456', 'frikytienda');
 $mysqli = new mysqli('localhost', 'frikyAdmin', '123456', 'frikytienda');
 
-/*$consultaCookie = $mysqli->query("SELECT idFig FROM figura");
+$consultaCookie = $mysqli->query("SELECT idFig FROM figura");
 $resCookie = $consultaCookie->fetch_object();
 
 
-
-while($resCookie != NULL){
+while($resCookie !== NULL){
 
     if(!isset($cantidad["$resCookie->idFig"])){
 
-        $cantidad["$rescookie->idFig"] = 0;
+        $cantidad["$resCookie->idFig"] = 0;
     
     }else{
 
-        if(isset($_POST["$resCookie->idFig"])){
+        if(isset($_GET["cod"])){
 
             $cantidad["$resCookie->idFig"]++;
 
@@ -40,7 +36,7 @@ while($resCookie != NULL){
     
     $resCookie = $consultaCookie->fetch_object();
 
-}*/
+}
 
 
 ?>
@@ -76,7 +72,7 @@ while($resCookie != NULL){
 
             <?php
 
-                $consulta = $mysqli->query("SELECT idFig, nombreFig, descFig, precioFig, imgFig FROM figura");
+                $consulta = $mysqli->query("SELECT idFig, nombreFig, descFig, precioFig, fotoFig FROM figura");
                 $res = $consulta->fetch_object();
 
                 while($res != NULL){
@@ -86,7 +82,7 @@ while($resCookie != NULL){
                         <div class='producto'>
                         
                             <div class='imagen'>
-                                <img width='100' src='data:image/png;base64, ".base64_encode($res->imgFig)."'></img>
+                                <img width='100' src='data:image/png;base64, ".base64_encode($res->fotoFig)."'></img>
                             </div>
                             <div class='nombre'>
                                 $res->nombreFig            
@@ -98,35 +94,37 @@ while($resCookie != NULL){
                                 $res->precioFig €
                             </div>
                             <div class='compra'>
-
-                                <form action='#' method='post'>
-                                    <input type='submit' name='$res->idFig' value='Comprar'>
-                                </form>
+";
+?>
+    <a href="./index.php?cod=<?php echo $res->idFig; ?>">Comprar</a>
 
                             </div>
                         
                         </div>
-                    
-                    ";
-
+<?php
                     $res = $consulta->fetch_object();
-
                 }
-                
-
-            ?>
+?>
 
         </div>
         <div class="carrito">
 
+        <h2>Carrito</h2>
+
             <?php
 
-                /*$consultaCookie = $mysqli->query("SELECT idFig FROM figura");
+                /*$consultaCookie = $mysqli->query("SELECT nombreFig, idFig FROM figura");
                 $resCookie = $consultaCookie->fetch_object();
 
                 while($resCookie != NULL){
 
-                    echo $_COOKIE["$resCookie->idFig"] , '<br>';
+                    if(isset($_COOKIE["resCookie->idFig"])){
+
+                        echo $resCookie->nombreFig, ": ";
+                        echo $_COOKIE["$resCookie->idFig"] , '<br>';
+                        echo <input type="button" name="elimina" value="Eliminar">;
+
+                    }
                     
                     $resCookie = $consultaCookie->fetch_object();
 

@@ -39,7 +39,7 @@ if(isset($_POST["submit"])){
         //echo $_POST['nombre'].", ".$_POST['desc'].", ".$_POST['precio'];
         //echo "INSERT INTO figura (nombreFig, descFig, precioFig, fotoFig) VALUES (".$_POST['nombre'].", ".$_POST['desc'].", ".$_POST['precio'].", '$imgContent')";
         //Insert image content into database
-        $insert = $db->query("INSERT INTO figura (nombreFig, descFig, precioFig, imgFig) VALUES ('".$_POST['nombre']."', '".$_POST['desc']."', ".$_POST['precio'].", '$imgContent')");
+        $insert = $db->query("INSERT INTO figura (nombreFig, descFig, precioFig, fotoFig) VALUES ('".$_POST['nombre']."', '".$_POST['desc']."', ".$_POST['precio'].", '$imgContent')");
         if($insert){
             echo "<p>Archivo subido correctamente a la base de datos</p>";
         }else{

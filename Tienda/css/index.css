@@ -9,6 +9,7 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: rgb(24, 24, 24);
+    background-color: aliceblue;
 }
 
 header {
@@ -17,7 +18,7 @@ header {
     justify-content: center;
     height: 10vh;
     width: 98vw;
-    color: whitesmoke;
+    color: black;
 }
 
 nav {
@@ -108,4 +109,5 @@ input[type=submit]:hover {
 
 .carrito {
     margin-top: 5vh;
+    color: black;
 }
